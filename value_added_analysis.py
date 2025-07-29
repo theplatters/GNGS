@@ -37,6 +37,7 @@ eu_countries = [
     "ESP",  # Spain
     "SWE",  # Sweden
 ]
+
 north_codes = {
     "AUS",
     "AUT",
@@ -80,6 +81,7 @@ north_codes = {
     "GBR",
     "USA",
 }
+
 south_codes = [
     # Low income (LI)
     "AFG",

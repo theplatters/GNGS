@@ -7,7 +7,6 @@ import numpy as np
 
 years = range(2010, 2018)
 
-
 def analyze_trade(years):
     exports_into_eu = {}
     imports_from_eu = {}
