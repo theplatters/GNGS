@@ -8,32 +8,6 @@ import numpy as np
 eora = pymrio.parse_eora26(year=2017, path="data/" + str(2017)).calc_all()
 
 
-eora.VA.F["AUT", "Education, Health and Other Services"]
-value_added_chile = eora.VA.F.loc[
-    ("Primary input", "Compensation of employees D.1"), "CHL"
-]
-value_added_chile
-
-eora.L
-
-
-eora.Q.F.loc[("Total CO2 emissions from EDGAR", "Total"), "CHL"]
-
-print(eora.Q.find("EDGAR"))
-eora.L
-
-
-eora.Y["AFG"].axes
-
-
-import mario
-
-eora_mario = mario.parse_from_pymrio(
-    io=eora, value_added={"VA": "all"}, satellite_account={"Q": "all"}
-)
-
-eora_mario
-
 eu_countries = [
     "AUT",  # Austria
     "BEL",  # Belgium
@@ -239,6 +213,29 @@ south_codes = [
 
 eora.Y.loc[south_codes, eu_countries].sum(axis=1)
 
-eora
+final_demand_for_electronics_eu = (
+    eora.Y.xs(key="Electrical and Machinery", level="sector")[eu_countries]
+    .sum(axis=1)
+    .drop(labels=eu_countries)
+)
+L_non_eu = (
+    eora.L.drop(index=eu_countries, level=0)
+    .drop(columns=eu_countries, level=0)
+    .xs(key="Electrical and Machinery", level="sector", axis=1)
+)
 
-eora.ixi
+L_non_eu.dot(final_demand_for_electronics_eu).nlargest(30)
+
+final_demand_eu = eora.Y[eu_countries].sum(axis=1)
+
+final_demand_eu.loc[
+    :,
+    pd.IndexSlice[
+        "Electrical and Machinery",
+        "Transport Equipment",
+        "Electricity, Gas and Water",
+        "Retail Trade",
+        "Transport",
+    ],
+    :,
+].groupby(level="sector").sum()
