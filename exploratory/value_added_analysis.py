@@ -220,6 +220,7 @@ final_demand_for_electronics_eu = (
     .sum(axis=1)
     .drop(labels=eu_countries)
 )
+
 L_non_eu = (
     eora.L.drop(index=eu_countries, level=0)
     .drop(columns=eu_countries, level=0)
@@ -241,3 +242,12 @@ final_demand_eu.loc[
     ],
     :,
 ].groupby(level="sector").sum()
+
+
+def todo():
+    return None
+
+
+def final_demand_for_batteries_in_eu():
+    #
+    todo()
