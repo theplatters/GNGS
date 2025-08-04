@@ -1,0 +1,11 @@
+{
+  "venvPath": ".",           // Looks for `.venv`, `venv`, etc.
+  "venv": ".venv",           // Explicitly use `.venv` (optional)
+  "pythonVersion": "3.11",   // Optional: Lock Python version
+  "executionEnvironments": [ // Optional: Per-directory settings
+    {
+      "root": "src",
+      "pythonVersion": "3.10"
+    }
+  ]
+}

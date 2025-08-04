@@ -4,7 +4,7 @@ import numpy as np
 from numpy.linalg import inv
 
 
-class EoraLoader:
+class Eora:
     def __init__(self, path):
         self.y = self._read_y(path)
         self.q = self._read_q(path)
@@ -85,6 +85,3 @@ class EoraLoader:
         q.index = row_index
         q.columns = col_index
         return q
-
-
-eora = EoraLoader("data/full_eora")
