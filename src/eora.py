@@ -17,6 +17,13 @@ class Eora:
     """
 
     def __init__(self, path):
+        """
+        Initializes the EORA.
+
+        Parameters:
+            path (str): The relative path where the data is stored.
+                        Note that the indices should be left as downloaded, but the data_csvs should be renamed to Y.csv, T.csv, Q.scv, V.csv respectively.
+        """
         self.y = self._read_y(path)
         self.q = self._read_q(path)
         self.t = self._read_t(path)
