@@ -5,6 +5,17 @@ from numpy.linalg import inv
 
 
 class Eora:
+    """Loads in the full eora
+
+    Attributes:
+        y (DataFrame): The final demand vector
+        q (DataFrame): The sattelite accounts
+        t (DataFrame): The transaction matrix
+        v (DataFrame): The value added matrix
+        a (DataFrame): The technical coefficients matrix
+        l (DataFrame): The leontief inverse
+    """
+
     def __init__(self, path):
         self.y = self._read_y(path)
         self.q = self._read_q(path)
