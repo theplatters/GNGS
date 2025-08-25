@@ -1,4 +1,4 @@
-from eora import Eora
+from src.eora import Eora
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -42,7 +42,9 @@ eora = Eora("data/full_eora")
 
 
 # Step 1: Extract MultiIndex as DataFrame
-col_index = pd.DataFrame(t.columns.tolist(), columns=["CountryA3", "Entity", "Sector"])
+col_index = pd.DataFrame(
+    eora.t.columns.tolist(), columns=["CountryA3", "Entity", "Sector"]
+)
 
 # Step 2: Drop duplicates
 unique_pairs = col_index[["Sector", "CountryA3"]].drop_duplicates()
