@@ -1,4 +1,5 @@
-from src.eora import Eora
+import src.eora as eo
+from copy import deepcopy
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -38,9 +39,38 @@ eu_countries_plus_ckj = eu_countries + [
     "JPN",  # Japan
 ]
 
-eora = Eora("data/full_eora")
+eora = eo.Eora("data/full_eora")
+eora_orig = deepcopy(eora)
 
+eora.aggregate(
+    [("AFG", "Industries", "Agriculture"), ("AFG", "Industries", "Fishing")],
+    ("test", "test", "test"),
+)
 
+sector_data = eo.SectorData(
+    t_rows=eora_orig.t[("AFG", "Industries", "Agriculture")],
+    t_columns=eora_orig.t.loc[("AFG", "Industries", "Agriculture")],
+    x=eora_orig.x[("AFG", "Industries", "Agriculture")],
+    y=eora_orig.y.loc[("AFG", "Industries", "Agriculture")],
+    q=eora_orig.q[("AFG", "Industries", "Agriculture")],
+)
+
+sector_data_2 = eo.SectorData(
+    t_rows=eora_orig.t[("AFG", "Industries", "Fishing")],
+    t_columns=eora_orig.t.loc[("AFG", "Industries", "Fishing")],
+    x=eora_orig.x[("AFG", "Industries", "Fishing")],
+    y=eora_orig.y.loc[("AFG", "Industries", "Fishing")],
+    q=eora_orig.q[("AFG", "Industries", "Fishing")],
+)
+
+dis: eo.DisaggregatesInto = [
+    (("AFG", "Industries", "Fishing"), sector_data_2),
+    (("AFG", "Industries", "Agriculture"), sector_data),
+]
+
+eora.dissaggregate(("test", "test", "test"), dis)
+
+sectors = [("AFG", "Industries", "Agriculture"), ("AFG", "Industries", "Fishing")]
 # Step 1: Extract MultiIndex as DataFrame
 col_index = pd.DataFrame(
     eora.t.columns.tolist(), columns=["CountryA3", "Entity", "Sector"]
@@ -106,8 +136,6 @@ sector_rename_map = {
     "Motor vehicles, trailers and semi-trailers": "car",
     "Motor vehicles and parts": "car",
 }
-
-t = eora.t.rename(index=sector_rename_map, columns=sector_rename_map, level="Sector")
 a = eora.a.rename(index=sector_rename_map, columns=sector_rename_map, level="Sector")
 y = eora.y.rename(index=sector_rename_map, level="Sector")
 l = eora.l.rename(index=sector_rename_map, columns=sector_rename_map, level="Sector")
@@ -115,13 +143,14 @@ car_leontief = l[eu_countries_plus_ckj].xs(key="car", axis=1, level="Sector")
 final_demand = (
     y.loc[eu_countries_plus_ckj].xs(key="car", level="Sector")[eu_countries].sum(axis=1)
 )
+final_demand
 res = pd.DataFrame(
     np.dot(car_leontief, final_demand),
     index=car_leontief.index,
     columns=["car_imports"],
 )
 
-t
+res.nlargest(50, columns="car_imports")
 
 res.nlargest(50, columns="car_imports").plot(kind="bar", legend=False)
 plt.ylabel("Car Imports")

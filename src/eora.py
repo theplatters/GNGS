@@ -2,19 +2,42 @@ import os
 import pandas as pd
 import numpy as np
 from numpy.linalg import inv
+from typing import Iterable, Any
+from dataclasses import dataclass
+
+
+@dataclass
+class SectorData:
+    t_rows: pd.Series | pd.DataFrame
+    t_columns: pd.Series | pd.DataFrame
+    x: pd.Series | pd.DataFrame
+    y: pd.Series | pd.DataFrame
+    v: pd.Series | pd.DataFrame
+    q: pd.Series | pd.DataFrame
+
+
+DisaggregatesInto = Iterable[tuple[Any, SectorData]]
 
 
 class Eora:
     """Loads in the full eora
 
     Attributes:
-        y (DataFrame): The final demand vector
-        q (DataFrame): The sattelite accounts
-        t (DataFrame): The transaction matrix
-        v (DataFrame): The value added matrix
-        a (DataFrame): The technical coefficients matrix
-        l (DataFrame): The leontief inverse
+        y (pd.DataFrame): The final demand vector
+        q (pd.DataFrame): The sattelite accounts
+        t (pd.DataFrame): The transaction matrix
+        v (pd.DataFrame): The value added matrix
+        a (pd.DataFrame): The technical coefficients matrix
+        l (pd.DataFrame): The leontief inverse
     """
+
+    y: pd.DataFrame
+    q: pd.DataFrame
+    t: pd.DataFrame
+    v: pd.DataFrame
+    x: pd.DataFrame
+    a: pd.DataFrame
+    l: pd.DataFrame
 
     def __init__(self, path):
         """
@@ -36,7 +59,9 @@ class Eora:
             columns=self.a.columns,
         )
 
-    def _read_dataframe(self, datapath, col_indices_path, row_indices_path):
+    def _read_dataframe(
+        self, datapath: str, col_indices_path: str, row_indices_path: str
+    ):
         t = pd.read_csv(datapath, header=None)
         col_index_raw = pd.read_csv(
             col_indices_path, delimiter=",", quotechar='"', skipinitialspace=True
@@ -103,3 +128,79 @@ class Eora:
         q.index = row_index
         q.columns = col_index
         return q
+
+    def aggregate(self, sectors: list[tuple], aggregated_sector_name: tuple):
+        """Aggregates sectors together
+
+        Args:
+            sectors (list[tuplse[str]]): The sectors that are unified
+            aggregated_sector_name (tuple[str]): The name of the new sectors
+
+        """
+        self.t[aggregated_sector_name] = self.t[sectors].sum(axis=1)
+        self.t.loc[aggregated_sector_name] = self.t.loc[sectors].sum(axis=0)
+        self.t.drop(sectors, inplace=True)
+        self.t.drop(sectors, axis=1, inplace=True)
+
+        self.x[aggregated_sector_name] = self.x[sectors].sum()
+        self.x.drop(sectors, inplace=True)
+
+        self.y.loc[aggregated_sector_name] = self.y.loc[sectors].sum(axis=1)
+        self.y.drop(sectors, inplace=True)
+        self.q[aggregated_sector_name] = self.q[sectors].sum(axis=1)
+        self.q.drop(sectors, axis=1, inplace=True)
+
+        self.a = self.t.divide(self.x, axis=1)
+        self.l = pd.DataFrame(
+            inv(np.eye(self.a.shape[0]) - self.a.values),
+            index=self.a.index,
+            columns=self.a.columns,
+        )
+
+    def dissaggregate(self, sector: tuple, aggregates_into: DisaggregatesInto):
+        """dissaggregates a sector into multiple sectors
+
+        Args:
+            sector (tuple): The sectors that is deleted             aggregated_sector_name (tuple[str]): The name of the new sectors
+            aggregates_into (DisaggregatesInto):
+
+        """
+        # delete original sector
+        self.t.drop(sector, inplace=True)
+        self.t.drop(sector, inplace=True, axis=1)
+        self.x.drop(sector, inplace=True)
+        self.y.drop(sector, inplace=True)
+        self.q.drop(sector, axis=1, inplace=True)
+        _, data = next(iter(aggregates_into))
+        first_index = data.t_columns.index
+
+        if all(x.t_columns.index == first_index for _, x in aggregates_into):
+            raise ValueError("Not all indices are equal")
+
+        self.t.reindex(index=data.t_columns.index, columns=data.t_rows.columns)
+        self.x.reindex(index=data.x.index)
+        self.y.reindex(index=data.x.index)
+        self.v.reindex(index=data.x.index)
+        self.q.reindex(index=data.q_columns.index)
+        for (
+            sector_name,
+            data,
+        ) in aggregates_into:  # or however you iterate over DisaggregatesInto
+            self.t[sector_name] = data.t_columns
+            self.t.loc[sector_name] = data.t_rows
+
+            self.x[sector_name] = data.x
+
+            self.y[sector_name] = data.y
+
+            self.v[sector_name] = data.v
+
+            self.q[sector_name] = data.q_columns
+
+        # Recalculate derived matrices
+        self.a = self.t.divide(self.x, axis=1)
+        self.l = pd.DataFrame(
+            inv(np.eye(self.a.shape[0]) - self.a.values),
+            index=self.a.index,
+            columns=self.a.columns,
+        )
