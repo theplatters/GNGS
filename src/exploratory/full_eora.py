@@ -39,36 +39,41 @@ eu_countries_plus_ckj = eu_countries + [
     "JPN",  # Japan
 ]
 
-eora = eo.Eora("data/full_eora")
-eora_orig = deepcopy(eora)
+# eora_true = eo.Eora("data/full_eora")
+
+eora = eo.test_eora()
+eora2 = deepcopy(eora)
 
 eora.aggregate(
-    [("AFG", "Industries", "Agriculture"), ("AFG", "Industries", "Fishing")],
+    [("USA", "Industry", "S1"), ("CHN", "Industry", "S1")],
     ("test", "test", "test"),
 )
 
 sector_data = eo.SectorData(
-    t_rows=eora_orig.t[("AFG", "Industries", "Agriculture")],
-    t_columns=eora_orig.t.loc[("AFG", "Industries", "Agriculture")],
-    x=eora_orig.x[("AFG", "Industries", "Agriculture")],
-    y=eora_orig.y.loc[("AFG", "Industries", "Agriculture")],
-    q=eora_orig.q[("AFG", "Industries", "Agriculture")],
+    t_columns=eora2.t[("USA", "Industry", "S1")],
+    t_rows=eora2.t.loc[("USA", "Industry", "S1")],
+    x=eora2.x[("USA", "Industry", "S1")],
+    v=eora2.v[("USA", "Industry", "S1")],
+    y=eora2.y.loc[("USA", "Industry", "S1")],
+    q=eora2.q[("USA", "Industry", "S1")],
 )
 
 sector_data_2 = eo.SectorData(
-    t_rows=eora_orig.t[("AFG", "Industries", "Fishing")],
-    t_columns=eora_orig.t.loc[("AFG", "Industries", "Fishing")],
-    x=eora_orig.x[("AFG", "Industries", "Fishing")],
-    y=eora_orig.y.loc[("AFG", "Industries", "Fishing")],
-    q=eora_orig.q[("AFG", "Industries", "Fishing")],
+    t_columns=eora2.t[("CHN", "Industry", "S2")],
+    t_rows=eora2.t.loc[("CHN", "Industry", "S2")],
+    x=eora2.x[("CHN", "Industry", "S2")],
+    v=eora2.v[("CHN", "Industry", "S2")],
+    y=eora2.y.loc[("CHN", "Industry", "S2")],
+    q=eora2.q[("CHN", "Industry", "S2")],
 )
 
 dis: eo.DisaggregatesInto = [
-    (("AFG", "Industries", "Fishing"), sector_data_2),
-    (("AFG", "Industries", "Agriculture"), sector_data),
+    (("USA", "Industry", "S1"), sector_data),
+    (("CHN", "Industry", "S2"), sector_data_2),
 ]
-
 eora.dissaggregate(("test", "test", "test"), dis)
+
+eora2.t
 
 sectors = [("AFG", "Industries", "Agriculture"), ("AFG", "Industries", "Fishing")]
 # Step 1: Extract MultiIndex as DataFrame

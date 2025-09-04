@@ -8,12 +8,12 @@ from dataclasses import dataclass
 
 @dataclass
 class SectorData:
-    t_rows: pd.Series | pd.DataFrame
-    t_columns: pd.Series | pd.DataFrame
-    x: pd.Series | pd.DataFrame
-    y: pd.Series | pd.DataFrame
-    v: pd.Series | pd.DataFrame
-    q: pd.Series | pd.DataFrame
+    t_rows: pd.Series
+    t_columns: pd.Series
+    x: pd.Series
+    y: pd.Series
+    v: pd.Series
+    q: pd.Series
 
 
 DisaggregatesInto = Iterable[tuple[Any, SectorData]]
@@ -174,14 +174,10 @@ class Eora:
         _, data = next(iter(aggregates_into))
         first_index = data.t_columns.index
 
-        if all(x.t_columns.index == first_index for _, x in aggregates_into):
+        if not all(x.t_columns.index.equals(first_index) for _, x in aggregates_into):
             raise ValueError("Not all indices are equal")
 
-        self.t.reindex(index=data.t_columns.index, columns=data.t_rows.columns)
-        self.x.reindex(index=data.x.index)
-        self.y.reindex(index=data.x.index)
-        self.v.reindex(index=data.x.index)
-        self.q.reindex(index=data.q_columns.index)
+        self.t.reindex(index=data.t_columns.index, columns=data.t_rows.index)
         for (
             sector_name,
             data,
@@ -195,7 +191,7 @@ class Eora:
 
             self.v[sector_name] = data.v
 
-            self.q[sector_name] = data.q_columns
+            self.q[sector_name] = data.q
 
         # Recalculate derived matrices
         self.a = self.t.divide(self.x, axis=1)
@@ -204,3 +200,69 @@ class Eora:
             index=self.a.index,
             columns=self.a.columns,
         )
+
+
+def test_eora():
+    """Generate a toy Eora instance with 3 countries × 3 sectors."""
+
+    countries = ["USA", "CHN", "DEU"]
+    sectors = [f"S{i}" for i in range(1, 4)]
+    entity = "Industry"  # simple placeholder entity
+
+    # Build MultiIndex for 9 sectors
+    sector_tuples = [(c, entity, s) for c in countries for s in sectors]
+    sector_index = pd.MultiIndex.from_tuples(
+        sector_tuples, names=["CountryA3", "Entity", "Sector"]
+    )
+
+    # Transaction matrix (9x9)
+    t = pd.DataFrame(
+        np.random.randint(10, 100, size=(9, 9)),
+        index=sector_index,
+        columns=sector_index,
+    )
+
+    # Final demand (9x3)
+    y_columns = pd.MultiIndex.from_tuples(
+        [(c, "FinalDemand", f"FD{i}") for c in countries for i in range(1, 2)],
+        names=["CountryA3", "Entity", "Sector"],
+    )
+    y = pd.DataFrame(
+        np.random.randint(5, 50, size=(9, 3)),
+        index=sector_index,
+        columns=y_columns,
+    )
+
+    # Value added (9x2)
+    v_columns = ["VA1", "VA2"]
+    v = pd.DataFrame(
+        np.random.randint(5, 50, size=(2, 9)),
+        index=v_columns,
+        columns=sector_index,
+    )
+
+    # Satellite accounts (4x9) → emissions
+    q_index = pd.MultiIndex.from_tuples(
+        [(f"EM{i}", f"Type{i}") for i in range(1, 5)],
+        names=["IndicatorCode", "LineItems"],
+    )
+    q = pd.DataFrame(
+        np.random.randint(1, 20, size=(4, 9)),
+        index=q_index,
+        columns=sector_index,
+    )
+
+    # Construct dummy Eora
+    eora = Eora.__new__(Eora)  # bypass __init__
+    eora.t = t
+    eora.y = y
+    eora.v = v
+    eora.q = q
+    eora.x = eora.t.sum(axis=0) + eora.y.sum(axis=1)
+    eora.a = eora.t.divide(eora.x, axis=1)
+    eora.l = pd.DataFrame(
+        np.linalg.inv(np.eye(eora.a.shape[0]) - eora.a.values),
+        index=eora.a.index,
+        columns=eora.a.columns,
+    )
+    return eora
