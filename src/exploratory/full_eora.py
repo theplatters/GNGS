@@ -59,21 +59,22 @@ sector_data = eo.SectorData(
 )
 
 sector_data_2 = eo.SectorData(
-    t_columns=eora2.t[("CHN", "Industry", "S2")],
-    t_rows=eora2.t.loc[("CHN", "Industry", "S2")],
-    x=eora2.x[("CHN", "Industry", "S2")],
-    v=eora2.v[("CHN", "Industry", "S2")],
-    y=eora2.y.loc[("CHN", "Industry", "S2")],
-    q=eora2.q[("CHN", "Industry", "S2")],
+    t_columns=eora2.t[("CHN", "Industry", "S1")],
+    t_rows=eora2.t.loc[("CHN", "Industry", "S1")],
+    x=eora2.x[("CHN", "Industry", "S1")],
+    v=eora2.v[("CHN", "Industry", "S1")],
+    y=eora2.y.loc[("CHN", "Industry", "S1")],
+    q=eora2.q[("CHN", "Industry", "S1")],
 )
 
 dis: eo.DisaggregatesInto = [
     (("USA", "Industry", "S1"), sector_data),
-    (("CHN", "Industry", "S2"), sector_data_2),
+    (("CHN", "Industry", "S1"), sector_data_2),
 ]
 eora.dissaggregate(("test", "test", "test"), dis)
+eora.t["CHN", "Industry", "S1"]
+eora.q
 
-eora2.t
 
 sectors = [("AFG", "Industries", "Agriculture"), ("AFG", "Industries", "Fishing")]
 # Step 1: Extract MultiIndex as DataFrame
