@@ -139,7 +139,7 @@ class Eora:
         """
         self.t[aggregated_sector_name] = self.t[sectors].sum(axis=1)
         self.t.loc[aggregated_sector_name] = self.t.loc[sectors].sum(axis=0)
-        self.t.drop(sectors, inplace=True)
+        self.t.drop(sectors, axis=0, inplace=True)
         self.t.drop(sectors, axis=1, inplace=True)
 
         self.x[aggregated_sector_name] = self.x[sectors].sum()
@@ -166,7 +166,7 @@ class Eora:
 
         """
         # delete original sector
-        self.t.drop(sector, inplace=True)
+        self.t.drop(sector, inplace=True, axis=0)
         self.t.drop(sector, inplace=True, axis=1)
         self.x.drop(sector, inplace=True)
         self.y.drop(sector, inplace=True)
