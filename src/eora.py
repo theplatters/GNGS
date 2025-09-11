@@ -274,3 +274,254 @@ def test_eora() -> Eora:
         columns=eora.a.columns,
     )
     return eora
+
+import re
+
+
+#
+ICE_PATTERNS = [
+    r"\b(coke|refined petroleum|petroleum products|nuclear fuels)\b",
+    r"\bbasic ferrous metals?\b",
+    r"\bfabricated metal products?\b",
+    r"\bmining and quarrying\b",
+    r"\bmachinery and equipment\b",
+]
+EV_PATTERNS = [
+    r"\belectrical (and )?machinery\b",
+    r"\bcommunication (and )?electronic equipment\b",
+    r"\boffice machinery and computers\b",
+    r"\bmedical, scientific, optical equipment\b",
+    r"\bbasic non-?ferrous metals?\b",
+    r"\binsulated wire|cables?\b",
+]
+
+from typing import List, Dict, Tuple, Optional, Iterable
+
+COUNTRY_TWEAKS: Dict[str, Dict[str, List[str]]] = {
+    # "DEU": {"ICE": [r"..."], "EV": [r"..."]},
+    # "CHN": {"EV": [r"electronic element and device"]},
+}
+
+def _country_patterns(iso: str) -> Tuple[List[str], List[str]]:
+    """Return (ICE_patterns, EV_patterns) for a given ISO code, with country tweaks applied."""
+    ice = ICE_PATTERNS.copy()
+    ev  = EV_PATTERNS.copy()
+    tweaks = COUNTRY_TWEAKS.get(iso.upper(), {})
+    ice += tweaks.get("ICE", [])
+    ev  += tweaks.get("EV", [])
+    return ice, ev
+
+
+def _norm_text(s: str) -> str:
+    s = s.lower()
+    s = re.sub(r"[^a-z0-9&]+", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
+
+def _matches_any(text: str, patterns: Iterable[str]) -> bool:
+    t = _norm_text(text)
+    return any(re.search(p, t) for p in patterns)
+
+def _bundle_row_mask(eora, iso: str, patterns: list[str]) -> pd.Series:
+    idx = eora.t.index
+    countries = idx.get_level_values(0)
+    sectors   = idx.get_level_values(2).astype(str)
+    return (countries == iso) & sectors.to_series().apply(lambda s: _matches_any(s, patterns)).values
+
+
+# ---------- bundle row/col masks ----------
+def _bundle_row_mask(eora, iso: str, patterns: list[str]) -> pd.Series:
+    """Select *supplying* rows: (CountryA3==iso) & Sector matches bundle."""
+    idx = eora.t.index  # MultiIndex (CountryA3, Entity, Sector)
+    countries = idx.get_level_values(0)
+    sectors   = idx.get_level_values(2).astype(str)
+    return (countries == iso) & sectors.to_series().apply(lambda s: _matches_any(s, patterns)).values
+
+def _country_col_mask(eora, iso: str) -> pd.Series:
+    """Select *buying* columns for a given country code."""
+    cols = eora.t.columns
+    return cols.get_level_values(0) == iso
+
+def _not_country_col_mask(eora, iso: str) -> pd.Series:
+    cols = eora.t.columns
+    return cols.get_level_values(0) != iso
+
+def bundle_demand_stats(eora, iso: str, kind: str = "ICE", top_suppliers: int = 15) -> dict:
+    """
+    Backward linkages: who supplies inputs to the ICE/EV bundle sectors in `iso`.
+    Returns:
+      - total_inputs: sum of all inputs into the bundle sectors
+      - domestic_inputs: inputs sourced domestically
+      - import_inputs: inputs sourced from abroad
+      - top_supplier_sectors: Series of inputs by (country, entity, sector)
+      - top_supplier_countries: Series aggregated by country
+    """
+    ice_patterns, ev_patterns = _country_patterns(iso)
+    patterns = ice_patterns if kind.upper() == "ICE" else ev_patterns
+
+    # --- select bundle columns (buyers) ---
+    col_idx = eora.t.columns
+    col_countries = col_idx.get_level_values(0)
+    col_sectors   = col_idx.get_level_values(2).astype(str)
+    col_mask_bundle = (col_countries == iso) & pd.Series(col_sectors).apply(lambda s: _matches_any(s, patterns)).values
+
+    if not col_mask_bundle.any():
+        return {"total_inputs": 0, "domestic_inputs": 0, "import_inputs": 0,
+                "top_supplier_sectors": pd.Series(dtype=float),
+                "top_supplier_countries": pd.Series(dtype=float)}
+
+     = eora.t.loc[:, col_mask_bundle]
+
+    # total inputs
+    total_inputs = T_cols_bundle.values.sum()
+
+    # domestic vs foreign split (by supplier country code in row index)
+    row_idx = eora.t.index
+    row_countries = row_idx.get_level_values(0)
+    domestic_inputs = T_cols_bundle[row_countries == iso].values.sum()
+    import_inputs   = total_inputs - domestic_inputs
+
+    # top suppliers by (country, entity, sector)
+    top_supplier_sectors = T_cols_bundle.sum(axis=1).sort_values(ascending=False).head(top_suppliers)
+
+    # aggregated by supplier country
+    suppliers_by_country = pd.Series(T_cols_bundle.sum(axis=1).values,
+                                     index=row_countries).groupby(lambda c: c).sum().sort_values(ascending=False)
+    top_supplier_countries = suppliers_by_country.head(top_suppliers)
+
+    return {
+        "total_inputs": float(total_inputs),
+        "domestic_inputs": float(domestic_inputs),
+        "import_inputs": float(import_inputs),
+        "top_supplier_sectors": top_supplier_sectors,
+        "top_supplier_countries": top_supplier_countries,
+    }
+
+
+# ---------- core: supply-side stats for a bundle in one country ----------
+def bundle_supply_stats(eora, iso: str, kind: str = "ICE", top_buyers: int = 10) -> dict:
+    """
+    Compute supply-side stats for ICE/EV bundle in `iso`.
+    Returns:
+      - x_bundle: total output of bundle sectors in country
+      - va_bundle: total value added (sum across VA rows for bundle columns)
+      - domestic_sales: T from bundle rows -> domestic columns
+      - export_sales:   T from bundle rows -> foreign columns
+      - top_foreign_buyers: Series of exports by buyer country
+      - A_intensity_by_buyer_country (optional signal): sum of A rows in bundle grouped by buyer country
+    """
+    ice_patterns, ev_patterns = _country_patterns(iso)
+    patterns = ice_patterns if kind.upper() == "ICE" else ev_patterns
+
+    # masks
+    row_mask = _bundle_row_mask(eora, iso, patterns)              # supplier rows (in iso, matching bundle)
+    dom_cols = _country_col_mask(eora, iso)                        # domestic buyers
+    for_cols = _not_country_col_mask(eora, iso)                    # foreign buyers
+
+    # 1) supply capacity
+    # x is indexed by columns (sectors): pick supplier columns in iso matching bundle
+    col_idx = eora.t.columns
+    col_countries = col_idx.get_level_values(0)
+    col_sectors   = col_idx.get_level_values(2).astype(str)
+    col_mask_bundle = (col_countries == iso) & pd.Series(col_sectors).apply(lambda s: _matches_any(s, patterns)).values
+    x_bundle = eora.x[col_mask_bundle].sum()
+
+    # 2) value added of those supplier sectors
+    # v has rows = VA items, columns = sectors (same MultiIndex as T columns)
+    va_bundle = eora.v.loc[:, col_mask_bundle].sum().sum()
+
+    # 3) sales flows from those supplier rows (T)
+    T_rows_bundle = eora.t.loc[row_mask, :]
+    domestic_sales = T_rows_bundle.loc[:, dom_cols].values.sum()
+    export_sales   = T_rows_bundle.loc[:, for_cols].values.sum()
+
+    # 4) top foreign buyer countries (sum across all buyer sectors, grouped by buyer country)
+    buyer_countries = eora.t.columns.get_level_values(0)
+    exports_by_country = pd.Series(T_rows_bundle.loc[:, for_cols].sum(axis=0).values,
+                                   index=buyer_countries[for_cols]).groupby(lambda c: c).sum().sort_values(ascending=False)
+    top_foreign_buyers = exports_by_country.head(top_buyers)
+
+    # 5) optional “presence” signal in A (sum supplier rows of A over bundle; group by buyer country)
+    A_rows_bundle = eora.a.loc[row_mask, :]
+    A_by_buyer_country = pd.Series(A_rows_bundle.sum(axis=0).values,
+                                   index=eora.a.columns.get_level_values(0)).groupby(lambda c: c).sum().sort_values(ascending=False)
+
+    return {
+        "x_bundle": float(x_bundle),
+        "va_bundle": float(va_bundle),
+        "domestic_sales": float(domestic_sales),
+        "export_sales": float(export_sales),
+        "top_foreign_buyers": top_foreign_buyers,
+        "A_intensity_by_buyer_country": A_by_buyer_country,
+    }
+
+# ---------- convenience: both bundles + ratios ----------
+def bundle_pairs_for_country(eora, iso: str) -> dict:
+    ice = bundle_supply_stats(eora, iso, "ICE", top_buyers=10)
+    ev  = bundle_supply_stats(eora, iso, "EV",  top_buyers=10)
+
+    def ratio(n, d):
+        return float(n/d) if d and np.isfinite(n) and np.isfinite(d) else np.nan
+
+    return {
+        "ICE": ice,
+        "EV": ev,
+        "ratios": {
+            "x_EV_to_ICE": ratio(ev["x_bundle"], ice["x_bundle"]),
+            "va_EV_to_ICE": ratio(ev["va_bundle"], ice["va_bundle"]),
+            "exports_EV_to_ICE": ratio(ev["export_sales"], ice["export_sales"]),
+            "domestic_EV_to_ICE": ratio(ev["domestic_sales"], ice["domestic_sales"]),
+        }
+    }
+if __name__ == "__main__":
+    data_dir = "data/eora"
+    eora = Eora(data_dir)
+    print("Loaded Eora from:", data_dir)
+
+    countries = ["DEU","FRA","ITA","ESP","CHN"]
+    rows = []
+    for iso in countries:
+        out = bundle_pairs_for_country(eora, iso)
+        ice, ev, r = out["ICE"], out["EV"], out["ratios"]
+
+        print(f"\n=== {iso} ===")
+        print(f"ICE  — x:{ice['x_bundle']:.3g}  VA:{ice['va_bundle']:.3g}  domestic:{ice['domestic_sales']:.3g}  exports:{ice['export_sales']:.3g}")
+        print(f"EV   — x:{ev['x_bundle']:.3g}  VA:{ev['va_bundle']:.3g}  domestic:{ev['domestic_sales']:.3g}  exports:{ev['export_sales']:.3g}")
+        print("Top foreign buyers of ICE bundle:\n", ice["top_foreign_buyers"])
+        print("Top foreign buyers of EV  bundle:\n", ev["top_foreign_buyers"])
+
+        rows.append({
+            "country": iso,
+            "x_ICE": ice["x_bundle"], "x_EV": ev["x_bundle"], "x_EV_to_ICE": r["x_EV_to_ICE"],
+            "va_ICE": ice["va_bundle"], "va_EV": ev["va_bundle"], "va_EV_to_ICE": r["va_EV_to_ICE"],
+            "domestic_ICE": ice["domestic_sales"], "domestic_EV": ev["domestic_sales"],
+            "exports_ICE": ice["export_sales"], "exports_EV": ev["export_sales"],
+            "exports_EV_to_ICE": r["exports_EV_to_ICE"], "domestic_EV_to_ICE": r["domestic_EV_to_ICE"],
+        })
+
+    # ----- BACKWARD LINKAGES: save a tidy summary for all countries -----
+    rows_back = []
+    for iso in countries:
+        back_ice = bundle_demand_stats(eora, iso, "ICE", top_suppliers=10)
+        back_ev = bundle_demand_stats(eora, iso, "EV", top_suppliers=10)
+
+
+        def ratio(n, d):
+            return (n / d) if d else np.nan
+
+
+        rows_back.append({
+            "country": iso,
+            "inputs_total_ICE": back_ice["total_inputs"],
+            "inputs_domestic_ICE": back_ice["domestic_inputs"],
+            "inputs_imports_ICE": back_ice["import_inputs"],
+            "inputs_total_EV": back_ev["total_inputs"],
+            "inputs_domestic_EV": back_ev["domestic_inputs"],
+            "inputs_imports_EV": back_ev["import_inputs"],
+            "ratio_total_EV_to_ICE": ratio(back_ev["total_inputs"], back_ice["total_inputs"]),
+            "ratio_imports_EV_to_ICE": ratio(back_ev["import_inputs"], back_ice["import_inputs"]),
+            "ratio_domestic_EV_to_ICE": ratio(back_ev["domestic_inputs"], back_ice["domestic_inputs"]),
+        })
+
+    os.makedirs("outputs", exist_ok=True)
+    pd.DataFrame(rows_back).to_csv("outputs/bundle_backward_summary.csv", index=False)
+    print("Saved: outputs/bundle_backward_summary.csv")
