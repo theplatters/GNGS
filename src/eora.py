@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from src.extension import Extension
 import numpy as np
 from numpy.linalg import inv
 from typing import Iterable, Any
@@ -32,14 +33,14 @@ class Eora:
     """
 
     y: pd.DataFrame
-    q: pd.DataFrame
+    q: Extension
     t: pd.DataFrame
     v: pd.DataFrame
     x: pd.DataFrame
     a: pd.DataFrame
     l: pd.DataFrame
 
-    def __init__(self, path):
+    def __init__(self, path) -> None:
         """
         Initializes the EORA.
 
@@ -48,10 +49,11 @@ class Eora:
                         Note that the indices should be left as downloaded, but the data_csvs should be renamed to Y.csv, T.csv, Q.scv, V.csv respectively.
         """
         self.y = self._read_y(path)
-        self.q = self._read_q(path)
         self.t = self._read_t(path)
         self.v = self._read_v(path)
         self.x = self.t.sum(axis=0) + self.y.sum(axis=1)
+        q, q_y = self._read_q(path)
+        self.q = Extension(q, q_y, self.x)
         self.a = self.t.divide(self.x, axis=1)
         self.l = pd.DataFrame(
             inv(np.eye(self.a.shape[0]) - self.a.values),
@@ -61,7 +63,7 @@ class Eora:
 
     def _read_dataframe(
         self, datapath: str, col_indices_path: str, row_indices_path: str
-    ):
+    ) -> pd.DataFrame:
         t = pd.read_csv(datapath, header=None)
         col_index_raw = pd.read_csv(
             col_indices_path, delimiter=",", quotechar='"', skipinitialspace=True
@@ -82,25 +84,25 @@ class Eora:
         t.index = row_index
         return t
 
-    def _read_t(self, path):
+    def _read_t(self, path: str) -> pd.DataFrame:
         datapath = os.path.join(path, "T.csv")
         row_indices_path = os.path.join(path, "index_t.csv")
         col_indices_path = os.path.join(path, "index_t.csv")
         return self._read_dataframe(datapath, col_indices_path, row_indices_path)
 
-    def _read_v(self, path):
+    def _read_v(self, path: str) -> pd.DataFrame:
         datapath = os.path.join(path, "V.csv")
         row_indices_path = os.path.join(path, "index_v.csv")
         col_indices_path = os.path.join(path, "index_t.csv")
         return self._read_dataframe(datapath, col_indices_path, row_indices_path)
 
-    def _read_y(self, path):
+    def _read_y(self, path: str) -> pd.DataFrame:
         datapath = os.path.join(path, "Y.csv")
         row_indices_path = os.path.join(path, "index_t.csv")
         col_indices_path = os.path.join(path, "index_y.csv")
         return self._read_dataframe(datapath, col_indices_path, row_indices_path)
 
-    def _read_q(self, path):
+    def _read_q(self, path: str) -> tuple[pd.DataFrame, pd.DataFrame]:
         datapath = os.path.join(path, "Q.csv")
         row_indices_path = os.path.join(path, "index_q.csv")
         col_indices_path_t = os.path.join(path, "index_t.csv")
@@ -117,6 +119,10 @@ class Eora:
             row_indices_path, delimiter=",", quotechar='"', skipinitialspace=True
         )
 
+        col_index_y = pd.MultiIndex.from_frame(
+            col_index_raw_y[["CountryA3", "Entity", "Sector"]]
+        )
+
         col_index = pd.MultiIndex.from_frame(
             col_index_raw[["CountryA3", "Entity", "Sector"]]
         )
@@ -124,12 +130,14 @@ class Eora:
             row_index_raw[["IndicatorCode", "LineItems"]]
         )
 
-        q = pd.read_csv(datapath, header=None)
+        q: pd.DataFrame = pd.read_csv(datapath, header=None)
         q.index = row_index
         q.columns = col_index
-        return q
+        q_y = q.loc[:, col_index_y]
+        q_rest = q.drop(col_index_y.to_list())
+        return q_rest, q_y
 
-    def aggregate(self, sectors: list[tuple], aggregated_sector_name: tuple):
+    def aggregate(self, sectors: list[tuple], aggregated_sector_name: tuple) -> None:
         """Aggregates sectors together
 
         Args:
@@ -157,11 +165,11 @@ class Eora:
             columns=self.a.columns,
         )
 
-    def dissaggregate(self, sector: tuple, aggregates_into: DisaggregatesInto):
+    def dissaggregate(self, sector: tuple, aggregates_into: DisaggregatesInto) -> None:
         """dissaggregates a sector into multiple sectors
 
         Args:
-            sector (tuple): The sectors that is deleted             aggregated_sector_name (tuple[str]): The name of the new sectors
+            sector (tuple): The sectors that is deleted
             aggregates_into (DisaggregatesInto):
 
         """
@@ -202,7 +210,7 @@ class Eora:
         )
 
 
-def test_eora():
+def test_eora() -> Eora:
     """Generate a toy Eora instance with 3 countries × 3 sectors."""
 
     countries = ["USA", "CHN", "DEU"]
