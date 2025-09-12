@@ -17,22 +17,8 @@ with open("data/south_codes.json") as f:
     south_codes.remove("SDN")
 
 
-def co2_shares(eora: IOSystem, from_codes: list[str], to_codes: list[str]) -> pd.Series:
-    Y_sn = eora.Y.loc[to_codes, from_codes].sum(axis=1)
-    Z_sn = eora.Z.loc[to_codes, from_codes].sum(axis=1)
-    demand_sn = Y_sn + Z_sn
-
-    south_leontief = eora.L.loc[to_codes, to_codes]
-
-    f_shares = eora.Q.S.loc["I-GHG-CO2 emissions", to_codes].sum(axis=0)
-    total_south_emissions = eora.Q.F.loc["I-GHG-CO2 emissions", to_codes].sum().sum()
-
-    co2_share = f_shares.mul(south_leontief.dot(demand_sn)).div(total_south_emissions)
-    return co2_share
-
-
-def co2_shares_sectoral(
-    eora: IOSystem, from_codes: list[str], to_codes: list[str]
+def embodied_co2_emissions(
+    eora, from_codes: list[str] | str, to_codes: list[str]
 ) -> pd.Series:
     Y_sn = eora.Y.loc[to_codes, from_codes].sum(axis=1)
     Z_sn = eora.Z.loc[to_codes, from_codes].sum(axis=1)
@@ -41,13 +27,45 @@ def co2_shares_sectoral(
     south_leontief = eora.L.loc[to_codes, to_codes]
 
     f_shares = eora.Q.S.loc["I-GHG-CO2 emissions", to_codes].sum(axis=0)
-    total_south_emissions = eora.Q.F.loc["I-GHG-CO2 emissions", to_codes].sum(axis=0)
 
-    co2_share = f_shares.mul(south_leontief.dot(demand_sn)).div(total_south_emissions)
+    co2_share = f_shares.mul(south_leontief.dot(demand_sn))
     return co2_share
 
 
-def co2_total(eora: IOSystem, from_codes: list[str], to_codes: list[str]) -> pd.Series:
+def embodied_value_added(
+    eora,
+    from_codes: list[str] | str,
+    to_codes: list[str] | str,
+    primary_input_label: str = "Compensation of employees D.1",
+) -> pd.Series:
+    Y_sn = eora.Y.loc[to_codes, from_codes].sum(axis=1)
+    Z_sn = eora.Z.loc[to_codes, from_codes].sum(axis=1)
+    demand_sn = Y_sn + Z_sn
+
+    south_leontief = eora.L.loc[to_codes, to_codes]
+
+    f_shares = eora.VA.S.loc[("Primary input", primary_input_label), to_codes]
+
+    eva = f_shares.mul(south_leontief.dot(demand_sn))
+    return eva
+
+
+def co2_shares(
+    eora, from_codes: list[str] | str, to_codes: list[str] | str
+) -> pd.Series:
+    total_south_emissions = eora.Q.F.loc["I-GHG-CO2 emissions", to_codes].sum().sum()
+    return embodied_co2_emissions(eora, from_codes, to_codes).div(total_south_emissions)
+
+
+def co2_shares_sectoral(eora, from_codes: list[str], to_codes: list[str]) -> pd.Series:
+    sectoral_emissions = eora.Q.F.loc["I-GHG-CO2 emissions", to_codes].sum(axis=0)
+
+    return embodied_co2_emissions(eora, from_codes, to_codes).div(sectoral_emissions)
+
+
+def co2_total(
+    eora, from_codes: list[str] | str, to_codes: list[str] | str
+) -> pd.Series:
     emissions = {}
     indices: pd.MultiIndex = eora.A.index[
         eora.A.index._get_level_values(0).isin(from_codes)
@@ -78,13 +96,45 @@ def co2_total(eora: IOSystem, from_codes: list[str], to_codes: list[str]) -> pd.
     return res
 
 
-res3 = co2_total(eora, north_codes, south_codes)
-co2_shares(eora, north_codes, south_codes)
-co2_shares_sectoral(eora, north_codes, south_codes).nsmallest(50)
-co2_shares_sectoral(eora, north_codes, south_codes).nsmallest(50)
+def ptt(eora, from_codes: list[str] | str, to_codes: list[str] | str) -> pd.DataFrame:
+    """
+    Calculates the ratio of embodied CO2 emissions to embodied value added
+    for each specified trade flow between regions.
+    """
+    if eora is None:
+        print("Eora data not loaded. Skipping PTT calculation.")
+        return {}
 
-eora.Q.F.loc["I-GHG-CO2 emissions", south_codes].sum(axis=0).div(
-    eora.x.loc[south_codes, "indout"]
-)
-eora.Y.loc[south_codes, "AUT"].sum(axis=1)
-eora.L.loc[south_codes, south_co]
+    indices: pd.MultiIndex = eora.A.index[
+        eora.A.index._get_level_values(0).isin(from_codes)
+    ]
+    columns: pd.MultiIndex = eora.A.index[
+        eora.A.index._get_level_values(0).isin(to_codes)
+    ]
+
+    ft = embodied_co2_emissions(eora, from_codes, to_codes) / embodied_value_added(
+        eora, from_codes, to_codes
+    )
+    tf = embodied_co2_emissions(eora, to_codes, from_codes) / embodied_value_added(
+        eora, to_codes, from_codes
+    )
+
+    res = tf.values[:, None] / ft.values
+    res = pd.DataFrame(res, index=tf.index, columns=ft.index)
+    res.replace([float("inf"), -float("inf")], np.nan, inplace=True)
+    return res
+
+
+co2_total(eora, north_codes, south_codes)
+co2_shares(eora, north_codes, south_codes).sum()
+co2_shares_sectoral(eora, north_codes, south_codes)
+
+
+res = ptt(eora, north_codes, south_codes)
+
+res2 = ptt(eora, south_codes, north_codes)
+
+
+res.mean(skipna=True).mean(skipna=True)
+res2.mean(skipna=True).mean(skipna=True)
+res.loc["AUT"]
