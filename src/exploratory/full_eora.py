@@ -5,33 +5,33 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 eu_countries = [
-    "AUT",  # Austria
-    "BEL",  # Belgium
-    "BGR",  # Bulgaria
-    "HRV",  # Croatia
-    "CYP",  # Cyprus
-    "CZE",  # Czechia
-    "DNK",  # Denmark
-    "EST",  # Estonia
-    "FIN",  # Finland
-    "FRA",  # France
-    "DEU",  # Germany
-    "GRC",  # Greece
-    "HUN",  # Hungary
-    "IRL",  # Ireland
-    "ITA",  # Italy
-    "LVA",  # Latvia
-    "LTU",  # Lithuania
-    "LUX",  # Luxembourg
-    "MLT",  # Malta
-    "NLD",  # Netherlands
-    "POL",  # Poland
-    "PRT",  # Portugal
-    "ROU",  # Romania
-    "SVK",  # Slovakia
-    "SVN",  # Slovenia
-    "ESP",  # Spain
-    "SWE",  # Sweden
+    "AUT",
+    "BEL",
+    "BGR",
+    "HRV",
+    "CYP",
+    "CZE",
+    "DNK",
+    "EST",
+    "FIN",
+    "FRA",
+    "DEU",
+    "GRC",
+    "HUN",
+    "IRL",
+    "ITA",
+    "LVA",
+    "LTU",
+    "LUX",
+    "MLT",
+    "NLD",
+    "POL",
+    "PRT",
+    "ROU",
+    "SVK",
+    "SVN",
+    "ESP",
+    "SWE",
 ]
 eu_countries_plus_ckj = eu_countries + [
     "CHN",  # China
