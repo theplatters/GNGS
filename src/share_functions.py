@@ -1,33 +1,17 @@
-import pymrio
 import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-from pymrio.core.mriosystem import IOSystem
-import json
-
-eora = pymrio.parse_eora26(year=2017, path="data/" + str(2017)).calc_all()
-
-with open("data/north_codes.json") as f:
-    north_codes = list(set(json.load(f)))
-
-with open("data/south_codes.json") as f:
-    south_codes = list(set(json.load(f)))
-    south_codes.remove("SSD")
-    south_codes.remove("SDN")
-
-with open("data/eu_codes.json") as f:
-    eu_codes = list(set(json.load(f)))
 
 
 def embodied_co2_emissions(
     eora, from_codes: list[str] | str, to_codes: list[str]
 ) -> pd.Series:
-    final_demand = eora.Y.loc[to_codes, from_codes].sum(axis=1)
-    intermediate_demand = eora.Y.loc[from_codes, from_codes].sum(axis=1)
+    north_demand_from_south = eora.Y.loc[to_codes, from_codes].sum(axis=1)
+    north_demand_from_north = eora.Y.loc[from_codes, from_codes].sum(axis=1)
 
-    induced_demand_from_final_demand = eora.L.loc[to_codes, to_codes].dot(final_demand)
+    induced_demand_from_final_demand = eora.L.loc[to_codes, to_codes].dot(
+        north_demand_from_south
+    )
     induced_demand_from_intermediate_demand = eora.L.loc[to_codes, from_codes].dot(
-        intermediate_demand
+        north_demand_from_north
     )
 
     induced_demand = (
@@ -46,12 +30,14 @@ def embodied_value_added(
     to_codes: list[str] | str,
     primary_input_label: str = "Compensation of employees D.1",
 ) -> pd.Series:
-    final_demand = eora.Y.loc[to_codes, from_codes].sum(axis=1)
-    intermediate_demand = eora.Y.loc[from_codes, from_codes].sum(axis=1)
+    north_demand_from_south = eora.Y.loc[to_codes, from_codes].sum(axis=1)
+    north_demand_from_north = eora.Y.loc[from_codes, from_codes].sum(axis=1)
 
-    induced_demand_from_final_demand = eora.L.loc[to_codes, to_codes].dot(final_demand)
+    induced_demand_from_final_demand = eora.L.loc[to_codes, to_codes].dot(
+        north_demand_from_south
+    )
     induced_demand_from_intermediate_demand = eora.L.loc[to_codes, from_codes].dot(
-        intermediate_demand
+        north_demand_from_north
     )
 
     induced_demand = (
@@ -143,24 +129,3 @@ def ptt(eora, from_codes: list[str] | str, to_codes: list[str] | str) -> pd.Data
     )
 
     return ft / tf
-
-
-res = co2_total(eora, eu_codes, [el for el in south_codes if el not in eu_codes])
-co2_shares(eora, eu_codes, [el for el in south_codes if el not in eu_codes]).sum().sum()
-co2_shares_sectoral(
-    eora, eu_codes, [el for el in south_codes if el not in eu_codes]
-).nlargest(10)
-dependency_shares(eora, north_codes, south_codes).sum()
-res
-
-ptts = pd.Series(
-    [ptt(eora, eu_codes, el) for el in south_codes if el not in eu_codes],
-    index=[el for el in south_codes if el not in eu_codes],
-)
-
-ptt(eora, eu_codes, "ALB")
-ptts.nlargest(10)
-ptts.nsmallest(50)
-
-eora.Z.loc[south_codes, eu_codes].sum(axis=1)
-eora.VA.F.loc[("Primary input", "Compensation of employees D.1"), south_codes].sum()
