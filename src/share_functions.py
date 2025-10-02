@@ -86,25 +86,15 @@ def co2_total(
         eora.A.index._get_level_values(0).isin(from_codes)
     ]
 
-    f_shares = eora.Q.S.loc["I-GHG-CO2 emissions"].sum(axis=0)
+    f_shares = eora.Q.S.loc["I-GHG-CO2 emissions"]
     for sec in from_codes:
-        Y_sn = eora.Y.loc[to_codes, sec].sum(axis=1)
         Y_total = eora.Y.loc[:, sec].sum(axis=1)
 
-        co2_total = f_shares.mul(eora.L.dot(Y_total)).sum()
+        co2_total = f_shares.mul(eora.L.dot(Y_total)).sum().sum()
         co2_south = (
-            f_shares[to_codes].mul(eora.L.loc[to_codes, to_codes].dot(Y_sn)).sum()
+            f_shares[to_codes].mul(eora.L.loc[to_codes, :].dot(Y_total)).sum().sum()
         )
         emissions[(sec, "Final Demand")] = co2_south / co2_total
-
-    for sec in indices:
-        Z_sn = eora.Z.loc[to_codes, sec]
-        Z_total = eora.Z.loc[:, sec]
-        co2_total = f_shares.mul(eora.L.dot(Z_total)).sum()
-        co2_south = (
-            f_shares[to_codes].mul(eora.L.loc[to_codes, to_codes].dot(Z_sn)).sum()
-        )
-        emissions[sec] = co2_south / co2_total
 
     res = pd.Series(emissions)
     res.index.names = ["Region", "Sector"]
