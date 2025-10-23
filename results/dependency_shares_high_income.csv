@@ -1,0 +1,1145 @@
+region,sector,0
+URY,Agriculture,2.4434300588074928e-06
+URY,Fishing,3.778498221330163e-08
+URY,Mining and Quarrying,7.137874277651425e-08
+URY,Food & Beverages,2.5883908491991046e-06
+URY,Textiles and Wearing Apparel,9.439226144067715e-07
+URY,Wood and Paper,3.0361176622765673e-07
+URY,"Petroleum, Chemical and Non-Metallic Mineral Products",9.365303833183534e-07
+URY,Metal Products,1.3245027361743123e-07
+URY,Electrical and Machinery,1.9516054845930744e-07
+URY,Transport Equipment,4.344911227133177e-08
+URY,Other Manufacturing,1.823057652057074e-07
+URY,Recycling,6.791775298141809e-08
+URY,"Electricity, Gas and Water",3.6394111428807133e-07
+URY,Construction,6.751502940486671e-07
+URY,Maintenance and Repair,2.4104270302447575e-08
+URY,Wholesale Trade,7.886863761540202e-07
+URY,Retail Trade,3.320861229601501e-07
+URY,Hotels and Restraurants,1.0244898303884719e-07
+URY,Transport,1.1848291240938615e-06
+URY,Post and Telecommunications,2.4641744947001563e-07
+URY,Finacial Intermediation and Business Activities,1.4708692328681475e-06
+URY,Public Administration,1.1154110645083516e-07
+URY,"Education, Health and Other Services",8.405707045446849e-07
+URY,Private Households,3.320125957709726e-08
+URY,Others,3.922081604030414e-14
+URY,Re-export & Re-import,8.559236092540422e-13
+BRN,Agriculture,8.155974945559233e-09
+BRN,Fishing,1.8409355878568528e-09
+BRN,Mining and Quarrying,8.462518036726655e-07
+BRN,Food & Beverages,1.0522058778667198e-08
+BRN,Textiles and Wearing Apparel,2.172567345534765e-08
+BRN,Wood and Paper,2.3841427060694145e-08
+BRN,"Petroleum, Chemical and Non-Metallic Mineral Products",5.259784277933657e-08
+BRN,Metal Products,3.998611745580982e-08
+BRN,Electrical and Machinery,8.317336273979392e-08
+BRN,Transport Equipment,1.5102681660948253e-08
+BRN,Other Manufacturing,1.4527121490042242e-08
+BRN,Recycling,2.1138653741531458e-09
+BRN,"Electricity, Gas and Water",3.697632524364653e-07
+BRN,Construction,2.288444148896703e-08
+BRN,Maintenance and Repair,1.51176480866846e-08
+BRN,Wholesale Trade,8.244731940111887e-08
+BRN,Retail Trade,3.3576451737677676e-08
+BRN,Hotels and Restraurants,2.4726024149477615e-08
+BRN,Transport,8.079107402034653e-08
+BRN,Post and Telecommunications,4.961516304977358e-08
+BRN,Finacial Intermediation and Business Activities,1.4156864083531706e-07
+BRN,Public Administration,8.862302516827162e-09
+BRN,"Education, Health and Other Services",3.19341691308986e-08
+BRN,Private Households,8.468256834881847e-09
+BRN,Others,1.2392495072364613e-09
+BRN,Re-export & Re-import,1.903280589721787e-12
+SGP,Agriculture,7.986657344280097e-08
+SGP,Fishing,1.0106595083874923e-07
+SGP,Mining and Quarrying,1.558092934774942e-07
+SGP,Food & Beverages,1.324610645249593e-06
+SGP,Textiles and Wearing Apparel,1.0419198368280148e-06
+SGP,Wood and Paper,6.2316228639495885e-06
+SGP,"Petroleum, Chemical and Non-Metallic Mineral Products",1.0951668253005599e-05
+SGP,Metal Products,6.019329633772362e-06
+SGP,Electrical and Machinery,4.519197260150854e-05
+SGP,Transport Equipment,4.486053749593702e-06
+SGP,Other Manufacturing,6.70214548251589e-07
+SGP,Recycling,1.2544905571332661e-07
+SGP,"Electricity, Gas and Water",1.3941572082339966e-06
+SGP,Construction,6.31874054703432e-06
+SGP,Maintenance and Repair,2.061684603144726e-06
+SGP,Wholesale Trade,2.6572810862908914e-05
+SGP,Retail Trade,5.9101537391747945e-05
+SGP,Hotels and Restraurants,2.4387655929262605e-05
+SGP,Transport,3.246829636211207e-05
+SGP,Post and Telecommunications,1.2679135524909702e-05
+SGP,Finacial Intermediation and Business Activities,0.00016883708505655967
+SGP,Public Administration,5.0196584288883715e-06
+SGP,"Education, Health and Other Services",9.384881507521724e-06
+SGP,Private Households,5.998955478221404e-07
+SGP,Others,8.300244660737053e-07
+SGP,Re-export & Re-import,6.917489837807911e-13
+KWT,Agriculture,2.7969001388250337e-08
+KWT,Fishing,1.759026473362221e-08
+KWT,Mining and Quarrying,4.584764153572662e-06
+KWT,Food & Beverages,2.93159189875201e-07
+KWT,Textiles and Wearing Apparel,2.2281271276265553e-07
+KWT,Wood and Paper,3.824080776243242e-07
+KWT,"Petroleum, Chemical and Non-Metallic Mineral Products",3.1097407010415082e-06
+KWT,Metal Products,3.383698388204976e-07
+KWT,Electrical and Machinery,9.525435134827555e-07
+KWT,Transport Equipment,1.8808997382649266e-07
+KWT,Other Manufacturing,1.4956342021632723e-07
+KWT,Recycling,4.229900919257858e-08
+KWT,"Electricity, Gas and Water",1.677683490101397e-07
+KWT,Construction,2.0820195235379816e-07
+KWT,Maintenance and Repair,4.903086426873063e-08
+KWT,Wholesale Trade,6.319525693392728e-07
+KWT,Retail Trade,1.4055549822993399e-06
+KWT,Hotels and Restraurants,8.916625814308628e-07
+KWT,Transport,1.7211009933929617e-06
+KWT,Post and Telecommunications,5.640198492541371e-07
+KWT,Finacial Intermediation and Business Activities,9.044080836224887e-06
+KWT,Public Administration,3.134985880456777e-07
+KWT,"Education, Health and Other Services",2.5458102089425685e-06
+KWT,Private Households,3.5478859341143473e-08
+KWT,Others,7.991153807573598e-08
+KWT,Re-export & Re-import,1.5122336839546805e-12
+AUS,Agriculture,1.303007275948969e-05
+AUS,Fishing,3.6359941029715634e-07
+AUS,Mining and Quarrying,2.9190904740229224e-05
+AUS,Food & Beverages,5.105517843247115e-06
+AUS,Textiles and Wearing Apparel,4.370696674649562e-06
+AUS,Wood and Paper,8.531527359543053e-06
+AUS,"Petroleum, Chemical and Non-Metallic Mineral Products",1.3765182292530163e-05
+AUS,Metal Products,1.8598933109932035e-05
+AUS,Electrical and Machinery,2.5194554356792516e-05
+AUS,Transport Equipment,6.330336111337271e-06
+AUS,Other Manufacturing,5.268480812271332e-06
+AUS,Recycling,4.2432457653158264e-07
+AUS,"Electricity, Gas and Water",2.7907248747728147e-06
+AUS,Construction,9.194307042890897e-07
+AUS,Maintenance and Repair,1.0687655385681172e-06
+AUS,Wholesale Trade,3.2886394329327766e-05
+AUS,Retail Trade,1.7703118511742947e-05
+AUS,Hotels and Restraurants,1.1679877459613505e-05
+AUS,Transport,1.5762001883237116e-05
+AUS,Post and Telecommunications,5.521132246817042e-06
+AUS,Finacial Intermediation and Business Activities,6.403595414988946e-05
+AUS,Public Administration,2.161186240555325e-06
+AUS,"Education, Health and Other Services",1.7172208083469876e-05
+AUS,Private Households,6.119640971956366e-08
+AUS,Others,2.888094580007243e-07
+AUS,Re-export & Re-import,6.714507499350662e-13
+BMU,Agriculture,2.934376319273864e-08
+BMU,Fishing,6.090085849209007e-09
+BMU,Mining and Quarrying,2.4222163075167194e-10
+BMU,Food & Beverages,1.8157710661902713e-08
+BMU,Textiles and Wearing Apparel,3.2266307305299814e-09
+BMU,Wood and Paper,6.5079330084361955e-09
+BMU,"Petroleum, Chemical and Non-Metallic Mineral Products",1.7376264142211747e-08
+BMU,Metal Products,8.754841395929952e-09
+BMU,Electrical and Machinery,1.6055752489474796e-08
+BMU,Transport Equipment,1.8437268924116338e-08
+BMU,Other Manufacturing,4.981968582906275e-09
+BMU,Recycling,3.7626901703791484e-10
+BMU,"Electricity, Gas and Water",9.331360914473265e-10
+BMU,Construction,2.1179181613003985e-07
+BMU,Maintenance and Repair,8.171268819040994e-08
+BMU,Wholesale Trade,4.579382347555776e-07
+BMU,Retail Trade,2.629140846296648e-07
+BMU,Hotels and Restraurants,2.408232937996624e-07
+BMU,Transport,2.3022711033238787e-07
+BMU,Post and Telecommunications,1.3233540024905802e-07
+BMU,Finacial Intermediation and Business Activities,1.0016917169819002e-06
+BMU,Public Administration,8.525314772148812e-07
+BMU,"Education, Health and Other Services",1.8015877832950625e-06
+BMU,Private Households,3.1720900501365715e-07
+BMU,Others,8.270164813453594e-08
+BMU,Re-export & Re-import,3.5718248219275563e-12
+CYM,Agriculture,5.323402348802672e-09
+CYM,Fishing,1.1820587690841697e-09
+CYM,Mining and Quarrying,1.662935272837727e-08
+CYM,Food & Beverages,3.5688971871782632e-09
+CYM,Textiles and Wearing Apparel,1.7710119541276063e-09
+CYM,Wood and Paper,5.528033668497087e-09
+CYM,"Petroleum, Chemical and Non-Metallic Mineral Products",1.190550484697861e-08
+CYM,Metal Products,1.501549337014097e-08
+CYM,Electrical and Machinery,3.741916684269873e-08
+CYM,Transport Equipment,1.3615780787777067e-07
+CYM,Other Manufacturing,3.0629877475800783e-09
+CYM,Recycling,1.1423678351416171e-10
+CYM,"Electricity, Gas and Water",5.338231485960474e-08
+CYM,Construction,1.5187564603049024e-07
+CYM,Maintenance and Repair,2.4297264864057893e-08
+CYM,Wholesale Trade,5.693582184555219e-07
+CYM,Retail Trade,1.4696780726989825e-07
+CYM,Hotels and Restraurants,2.120442666050925e-07
+CYM,Transport,6.834246168079129e-07
+CYM,Post and Telecommunications,2.8428605169755676e-07
+CYM,Finacial Intermediation and Business Activities,1.3514289329464585e-06
+CYM,Public Administration,2.3051426172984783e-07
+CYM,"Education, Health and Other Services",8.721185630615264e-07
+CYM,Private Households,3.052439714265663e-08
+CYM,Others,1.108072286946698e-08
+CYM,Re-export & Re-import,3.710926332731832e-13
+TWN,Agriculture,7.024075248661092e-07
+TWN,Fishing,1.1009341422004962e-07
+TWN,Mining and Quarrying,1.6373945213343393e-06
+TWN,Food & Beverages,3.211035032483052e-07
+TWN,Textiles and Wearing Apparel,5.292409305214686e-06
+TWN,Wood and Paper,2.995832409654711e-06
+TWN,"Petroleum, Chemical and Non-Metallic Mineral Products",1.265707544562853e-05
+TWN,Metal Products,1.1605189258821883e-05
+TWN,Electrical and Machinery,3.572057268702652e-05
+TWN,Transport Equipment,9.395980012721313e-06
+TWN,Other Manufacturing,1.4758790332808897e-06
+TWN,Recycling,3.115678531659772e-06
+TWN,"Electricity, Gas and Water",2.3365553856732434e-06
+TWN,Construction,2.3367340773095557e-06
+TWN,Maintenance and Repair,8.668042613959806e-07
+TWN,Wholesale Trade,1.6875680473092015e-05
+TWN,Retail Trade,2.1126341602385685e-05
+TWN,Hotels and Restraurants,2.9276623635117768e-06
+TWN,Transport,1.1051946121808856e-05
+TWN,Post and Telecommunications,2.812370209552227e-06
+TWN,Finacial Intermediation and Business Activities,3.228354304389638e-05
+TWN,Public Administration,7.00725403590989e-08
+TWN,"Education, Health and Other Services",1.0695960809164726e-05
+TWN,Private Households,2.4272138601691603e-08
+TWN,Others,5.980515099532931e-07
+TWN,Re-export & Re-import,4.968280883361122e-13
+AND,Agriculture,1.9156283302306453e-08
+AND,Fishing,2.197101351804311e-09
+AND,Mining and Quarrying,1.4854988421389212e-08
+AND,Food & Beverages,4.820943030000445e-08
+AND,Textiles and Wearing Apparel,3.5777979855024936e-08
+AND,Wood and Paper,1.0449488493654288e-07
+AND,"Petroleum, Chemical and Non-Metallic Mineral Products",8.929073936151677e-08
+AND,Metal Products,1.0166206518080029e-07
+AND,Electrical and Machinery,2.931687252225528e-07
+AND,Transport Equipment,6.121948596356186e-08
+AND,Other Manufacturing,1.8755088714468664e-08
+AND,Recycling,7.147828824521306e-10
+AND,"Electricity, Gas and Water",3.830592443699858e-08
+AND,Construction,1.6482312902832805e-07
+AND,Maintenance and Repair,4.420311745655627e-08
+AND,Wholesale Trade,8.34161007633699e-07
+AND,Retail Trade,1.6941614909501462e-07
+AND,Hotels and Restraurants,1.2641290023374188e-07
+AND,Transport,2.6039602296090726e-07
+AND,Post and Telecommunications,1.5719360502677402e-07
+AND,Finacial Intermediation and Business Activities,1.0094104987962404e-06
+AND,Public Administration,5.766207029561571e-08
+AND,"Education, Health and Other Services",1.941853916492029e-07
+AND,Private Households,1.7958925662817725e-08
+AND,Others,2.0289709941090856e-08
+AND,Re-export & Re-import,6.352119178342189e-12
+BHR,Agriculture,9.837206760966808e-09
+BHR,Fishing,4.5214282070137e-09
+BHR,Mining and Quarrying,4.1474834361381206e-07
+BHR,Food & Beverages,5.962148398675952e-08
+BHR,Textiles and Wearing Apparel,1.1866068127091247e-06
+BHR,Wood and Paper,2.7203353511024377e-07
+BHR,"Petroleum, Chemical and Non-Metallic Mineral Products",2.2018512730967987e-06
+BHR,Metal Products,2.99450906994775e-06
+BHR,Electrical and Machinery,8.297106971451985e-07
+BHR,Transport Equipment,1.8137269772341882e-07
+BHR,Other Manufacturing,1.3373860106968965e-07
+BHR,Recycling,1.8649679695086283e-08
+BHR,"Electricity, Gas and Water",9.093556173355557e-07
+BHR,Construction,9.001149961136442e-07
+BHR,Maintenance and Repair,9.191714862313208e-08
+BHR,Wholesale Trade,1.2628263853171887e-06
+BHR,Retail Trade,2.1570280169488084e-07
+BHR,Hotels and Restraurants,3.2842731889758255e-07
+BHR,Transport,1.633320325177156e-06
+BHR,Post and Telecommunications,7.859268435258084e-07
+BHR,Finacial Intermediation and Business Activities,2.0606071508381265e-06
+BHR,Public Administration,1.7041076309583007e-07
+BHR,"Education, Health and Other Services",1.21231680560958e-06
+BHR,Private Households,1.1818641090565156e-07
+BHR,Others,3.8776366315303356e-08
+BHR,Re-export & Re-import,7.845330836758514e-12
+MAC,Agriculture,4.639741165576898e-07
+MAC,Fishing,4.882080689190788e-07
+MAC,Mining and Quarrying,2.271890646058591e-09
+MAC,Food & Beverages,6.428514141957159e-09
+MAC,Textiles and Wearing Apparel,3.638486083601759e-07
+MAC,Wood and Paper,2.0458314255810076e-08
+MAC,"Petroleum, Chemical and Non-Metallic Mineral Products",4.4269727821728686e-08
+MAC,Metal Products,1.6940998778755605e-08
+MAC,Electrical and Machinery,1.2191503227223335e-07
+MAC,Transport Equipment,7.522314849988664e-09
+MAC,Other Manufacturing,2.4440201440775948e-08
+MAC,Recycling,7.969968349885555e-10
+MAC,"Electricity, Gas and Water",7.6982837256517e-09
+MAC,Construction,1.8021004439552267e-06
+MAC,Maintenance and Repair,3.095497105311397e-07
+MAC,Wholesale Trade,1.3377438215287105e-05
+MAC,Retail Trade,7.505181201755694e-07
+MAC,Hotels and Restraurants,3.3796985172020047e-06
+MAC,Transport,1.593164730962629e-06
+MAC,Post and Telecommunications,1.5760558110182107e-06
+MAC,Finacial Intermediation and Business Activities,1.0251342156289733e-05
+MAC,Public Administration,8.920997513694894e-07
+MAC,"Education, Health and Other Services",9.158168143670409e-06
+MAC,Private Households,2.2823897720994295e-07
+MAC,Others,2.330581415054902e-08
+MAC,Re-export & Re-import,3.322284895651185e-12
+HKG,Agriculture,5.375150055721158e-08
+HKG,Fishing,9.918990597808089e-09
+HKG,Mining and Quarrying,1.528904340487404e-07
+HKG,Food & Beverages,1.8626285036736977e-06
+HKG,Textiles and Wearing Apparel,0.0001269221158562449
+HKG,Wood and Paper,1.4428864341840058e-05
+HKG,"Petroleum, Chemical and Non-Metallic Mineral Products",9.641349670529312e-06
+HKG,Metal Products,1.27448605056706e-05
+HKG,Electrical and Machinery,0.00018961197344776875
+HKG,Transport Equipment,1.0499921671832214e-05
+HKG,Other Manufacturing,1.5988624606158417e-05
+HKG,Recycling,5.956560090106449e-06
+HKG,"Electricity, Gas and Water",9.569112705478106e-07
+HKG,Construction,2.9362572869729093e-05
+HKG,Maintenance and Repair,1.551543529336341e-06
+HKG,Wholesale Trade,1.9997651368828194e-05
+HKG,Retail Trade,4.447752421154888e-05
+HKG,Hotels and Restraurants,2.0687218450169755e-06
+HKG,Transport,1.275711310392745e-05
+HKG,Post and Telecommunications,1.0324008730795372e-06
+HKG,Finacial Intermediation and Business Activities,1.6164002554015623e-05
+HKG,Public Administration,5.591157791402476e-06
+HKG,"Education, Health and Other Services",1.279206341492975e-05
+HKG,Private Households,7.374274367061453e-08
+HKG,Others,2.1164201255074244e-05
+HKG,Re-export & Re-import,8.714216317702885e-13
+GUY,Agriculture,1.0839800503858692e-09
+GUY,Fishing,1.0754952050785125e-10
+GUY,Mining and Quarrying,2.3075277337175145e-09
+GUY,Food & Beverages,2.1599491035078007e-09
+GUY,Textiles and Wearing Apparel,6.804258192231595e-10
+GUY,Wood and Paper,4.3502682405391345e-09
+GUY,"Petroleum, Chemical and Non-Metallic Mineral Products",7.64366209660991e-09
+GUY,Metal Products,6.211848417846906e-09
+GUY,Electrical and Machinery,6.580276873435536e-09
+GUY,Transport Equipment,1.3819388384886162e-09
+GUY,Other Manufacturing,9.383011195467542e-10
+GUY,Recycling,5.509561254777028e-10
+GUY,"Electricity, Gas and Water",2.421707796472677e-09
+GUY,Construction,1.3780395897169297e-08
+GUY,Maintenance and Repair,5.075627548792198e-10
+GUY,Wholesale Trade,3.124451427050508e-08
+GUY,Retail Trade,6.758295313081783e-09
+GUY,Hotels and Restraurants,3.359854415960842e-09
+GUY,Transport,1.2314687360692329e-08
+GUY,Post and Telecommunications,5.894821377576344e-09
+GUY,Finacial Intermediation and Business Activities,7.068262317081591e-08
+GUY,Public Administration,3.0868183186251024e-09
+GUY,"Education, Health and Other Services",9.99155654687418e-09
+GUY,Private Households,2.302002328535796e-09
+GUY,Others,1.0748830369599404e-10
+GUY,Re-export & Re-import,3.17308186311043e-16
+VGB,Agriculture,1.2060891989677999e-09
+VGB,Fishing,1.2770052661345303e-10
+VGB,Mining and Quarrying,3.629041530585632e-09
+VGB,Food & Beverages,3.79476065892838e-09
+VGB,Textiles and Wearing Apparel,3.1291669422864507e-09
+VGB,Wood and Paper,6.11557626914157e-09
+VGB,"Petroleum, Chemical and Non-Metallic Mineral Products",7.861726239428924e-09
+VGB,Metal Products,1.0006650624505422e-08
+VGB,Electrical and Machinery,1.1696017504811308e-08
+VGB,Transport Equipment,2.267720689937814e-08
+VGB,Other Manufacturing,7.424987765520187e-09
+VGB,Recycling,1.7028742302473912e-10
+VGB,"Electricity, Gas and Water",9.893203494142949e-09
+VGB,Construction,4.304001390674505e-08
+VGB,Maintenance and Repair,2.455407247211226e-08
+VGB,Wholesale Trade,2.489337760306135e-07
+VGB,Retail Trade,1.790719442291809e-07
+VGB,Hotels and Restraurants,9.933819514721359e-08
+VGB,Transport,1.8515878863818236e-07
+VGB,Post and Telecommunications,1.0130733844908405e-07
+VGB,Finacial Intermediation and Business Activities,2.0616386017801503e-07
+VGB,Public Administration,1.2039101784751884e-07
+VGB,"Education, Health and Other Services",3.6026773572491057e-07
+VGB,Private Households,2.5732291581864696e-08
+VGB,Others,7.632404799314661e-09
+VGB,Re-export & Re-import,8.12788379284754e-13
+NCL,Agriculture,1.4007689444799188e-08
+NCL,Fishing,1.0209881292820473e-08
+NCL,Mining and Quarrying,1.7373243955733795e-08
+NCL,Food & Beverages,2.1830872751133006e-08
+NCL,Textiles and Wearing Apparel,1.9699121524208143e-08
+NCL,Wood and Paper,5.683632768159761e-08
+NCL,"Petroleum, Chemical and Non-Metallic Mineral Products",1.0576319649687948e-07
+NCL,Metal Products,1.1232240646797746e-06
+NCL,Electrical and Machinery,2.0104205526610638e-07
+NCL,Transport Equipment,2.5893940108037733e-08
+NCL,Other Manufacturing,2.6142629517249674e-08
+NCL,Recycling,1.3341582151224325e-08
+NCL,"Electricity, Gas and Water",6.074671340154677e-08
+NCL,Construction,2.2476692918410695e-07
+NCL,Maintenance and Repair,3.309501231097604e-08
+NCL,Wholesale Trade,4.03518847609112e-07
+NCL,Retail Trade,7.171737208358862e-08
+NCL,Hotels and Restraurants,7.093326670224038e-08
+NCL,Transport,5.527749734533313e-07
+NCL,Post and Telecommunications,1.5798439686215685e-07
+NCL,Finacial Intermediation and Business Activities,5.973197842399997e-07
+NCL,Public Administration,3.7856050611657514e-08
+NCL,"Education, Health and Other Services",1.9030105559004402e-07
+NCL,Private Households,2.59375686080851e-08
+NCL,Others,1.53136465155187e-08
+NCL,Re-export & Re-import,3.3048174501206963e-12
+SMR,Agriculture,1.6588907345814844e-09
+SMR,Fishing,2.6060872609051134e-10
+SMR,Mining and Quarrying,1.5637285525193511e-09
+SMR,Food & Beverages,2.8818865625742686e-08
+SMR,Textiles and Wearing Apparel,1.9343898998228882e-08
+SMR,Wood and Paper,4.756478922162906e-08
+SMR,"Petroleum, Chemical and Non-Metallic Mineral Products",7.420668827748814e-08
+SMR,Metal Products,5.7553024029341586e-08
+SMR,Electrical and Machinery,1.0851189573562365e-07
+SMR,Transport Equipment,3.180811887775171e-08
+SMR,Other Manufacturing,2.1339767899565735e-08
+SMR,Recycling,1.4631562264861943e-09
+SMR,"Electricity, Gas and Water",5.328076612377979e-09
+SMR,Construction,4.9914389514489785e-08
+SMR,Maintenance and Repair,1.0324459792515926e-08
+SMR,Wholesale Trade,1.0153502125064159e-07
+SMR,Retail Trade,8.552969334662152e-08
+SMR,Hotels and Restraurants,5.546328295984523e-08
+SMR,Transport,4.825553361660816e-08
+SMR,Post and Telecommunications,4.915401924536488e-08
+SMR,Finacial Intermediation and Business Activities,1.4102630338115855e-07
+SMR,Public Administration,5.867412958837725e-08
+SMR,"Education, Health and Other Services",1.0390071444672571e-07
+SMR,Private Households,6.6001320541158095e-09
+SMR,Others,2.1996281429823643e-09
+SMR,Re-export & Re-import,1.8732969338981981e-13
+TTO,Agriculture,1.6977545556113607e-08
+TTO,Fishing,5.524276716913426e-09
+TTO,Mining and Quarrying,8.028803994447099e-07
+TTO,Food & Beverages,4.6442576943123725e-08
+TTO,Textiles and Wearing Apparel,6.957983601940536e-08
+TTO,Wood and Paper,2.2804498228497062e-07
+TTO,"Petroleum, Chemical and Non-Metallic Mineral Products",6.509657386180122e-07
+TTO,Metal Products,5.986277971470497e-07
+TTO,Electrical and Machinery,5.193891674059457e-07
+TTO,Transport Equipment,1.0702566929415286e-07
+TTO,Other Manufacturing,6.901502076952655e-08
+TTO,Recycling,1.0447006830672586e-08
+TTO,"Electricity, Gas and Water",9.86425086492309e-08
+TTO,Construction,5.72320920754492e-07
+TTO,Maintenance and Repair,5.4786099529271184e-08
+TTO,Wholesale Trade,9.605766579739897e-07
+TTO,Retail Trade,2.409734368742681e-07
+TTO,Hotels and Restraurants,1.2120751743711032e-07
+TTO,Transport,3.4175279315404657e-07
+TTO,Post and Telecommunications,2.610583370106432e-07
+TTO,Finacial Intermediation and Business Activities,9.635652634591466e-07
+TTO,Public Administration,2.1930320431374505e-08
+TTO,"Education, Health and Other Services",1.0418607720253936e-07
+TTO,Private Households,5.309215207040429e-09
+TTO,Others,5.3161024836632415e-09
+TTO,Re-export & Re-import,2.175452454484206e-12
+USA,Agriculture,7.671918644189663e-05
+USA,Fishing,2.0346808884715207e-06
+USA,Mining and Quarrying,7.3688803346613e-05
+USA,Food & Beverages,5.0458790559501404e-05
+USA,Textiles and Wearing Apparel,1.801624814757355e-05
+USA,Wood and Paper,0.00015280837895534596
+USA,"Petroleum, Chemical and Non-Metallic Mineral Products",0.0004978594209669967
+USA,Metal Products,0.00033841398442442926
+USA,Electrical and Machinery,0.00107459457211888
+USA,Transport Equipment,0.0002349162363970311
+USA,Other Manufacturing,8.969429324837949e-05
+USA,Recycling,3.9420246853499624e-08
+USA,"Electricity, Gas and Water",5.3331432310062966e-05
+USA,Construction,9.127565678748115e-05
+USA,Maintenance and Repair,2.9647107584239466e-05
+USA,Wholesale Trade,0.0013157640393829874
+USA,Retail Trade,0.00019866124987961934
+USA,Hotels and Restraurants,0.00011214896130420411
+USA,Transport,0.0002697010644080135
+USA,Post and Telecommunications,0.00045804621565751554
+USA,Finacial Intermediation and Business Activities,0.0017085907287169634
+USA,Public Administration,1.7722991407735794e-05
+USA,"Education, Health and Other Services",8.550980752040574e-05
+USA,Private Households,4.0994150416688146e-07
+USA,Others,4.7703604542221285e-06
+USA,Re-export & Re-import,5.582512902863075e-13
+ATG,Agriculture,4.455093389328233e-09
+ATG,Fishing,2.029045152957368e-09
+ATG,Mining and Quarrying,5.978437278515206e-09
+ATG,Food & Beverages,2.2807353953337285e-09
+ATG,Textiles and Wearing Apparel,3.1104280610080656e-09
+ATG,Wood and Paper,4.968384872983541e-09
+ATG,"Petroleum, Chemical and Non-Metallic Mineral Products",7.54278796082616e-09
+ATG,Metal Products,1.1790621586061429e-08
+ATG,Electrical and Machinery,1.0989896053209956e-08
+ATG,Transport Equipment,1.4023668684101488e-08
+ATG,Other Manufacturing,3.056238369559139e-09
+ATG,Recycling,2.2537889049778617e-10
+ATG,"Electricity, Gas and Water",1.3240381376458121e-08
+ATG,Construction,1.4486203877184866e-07
+ATG,Maintenance and Repair,2.6509343411641442e-08
+ATG,Wholesale Trade,1.0976946974660343e-07
+ATG,Retail Trade,5.1737580699410935e-08
+ATG,Hotels and Restraurants,5.989394748793906e-08
+ATG,Transport,9.231836157170898e-08
+ATG,Post and Telecommunications,6.022898291771253e-08
+ATG,Finacial Intermediation and Business Activities,6.347895872703887e-08
+ATG,Public Administration,2.4649186668114364e-08
+ATG,"Education, Health and Other Services",6.166389872629728e-08
+ATG,Private Households,1.1187803405564438e-08
+ATG,Others,2.2812775958691786e-09
+ATG,Re-export & Re-import,8.046374904647345e-13
+PYF,Agriculture,3.648215286261832e-08
+PYF,Fishing,1.8945466814559873e-08
+PYF,Mining and Quarrying,9.830026095944798e-09
+PYF,Food & Beverages,2.5232490167234682e-08
+PYF,Textiles and Wearing Apparel,1.0178526939494565e-08
+PYF,Wood and Paper,4.191813613384071e-08
+PYF,"Petroleum, Chemical and Non-Metallic Mineral Products",3.1252702405876086e-08
+PYF,Metal Products,4.4374653034967615e-08
+PYF,Electrical and Machinery,4.1861477957586506e-08
+PYF,Transport Equipment,1.048781958232063e-08
+PYF,Other Manufacturing,6.049413809762516e-08
+PYF,Recycling,9.930590613518402e-10
+PYF,"Electricity, Gas and Water",1.695265452396354e-08
+PYF,Construction,5.3858561007269655e-08
+PYF,Maintenance and Repair,3.172242235471108e-08
+PYF,Wholesale Trade,1.7800660048654212e-07
+PYF,Retail Trade,6.194817778240036e-08
+PYF,Hotels and Restraurants,4.3836729966120857e-08
+PYF,Transport,2.1405505563336442e-07
+PYF,Post and Telecommunications,9.355404835073622e-08
+PYF,Finacial Intermediation and Business Activities,2.812596188568515e-07
+PYF,Public Administration,3.4968429692025045e-08
+PYF,"Education, Health and Other Services",9.112545682330692e-08
+PYF,Private Households,2.8693769985630058e-08
+PYF,Others,6.287850852556245e-09
+PYF,Re-export & Re-import,1.851507568592008e-12
+OMN,Agriculture,5.14032087062187e-08
+OMN,Fishing,9.020173995501899e-08
+OMN,Mining and Quarrying,3.7460789873519766e-06
+OMN,Food & Beverages,9.861258149748783e-08
+OMN,Textiles and Wearing Apparel,4.773913066432863e-08
+OMN,Wood and Paper,8.494619699417281e-08
+OMN,"Petroleum, Chemical and Non-Metallic Mineral Products",4.1804099002711733e-07
+OMN,Metal Products,2.4357518916543054e-07
+OMN,Electrical and Machinery,4.955705310264825e-07
+OMN,Transport Equipment,4.41115436374248e-08
+OMN,Other Manufacturing,3.73939576534801e-08
+OMN,Recycling,1.702710508428931e-08
+OMN,"Electricity, Gas and Water",4.24287772984309e-07
+OMN,Construction,2.6854248778892047e-07
+OMN,Maintenance and Repair,5.17242575775812e-08
+OMN,Wholesale Trade,4.4866547226944107e-07
+OMN,Retail Trade,1.5727941002664696e-07
+OMN,Hotels and Restraurants,1.0626242914035489e-07
+OMN,Transport,6.679638607404031e-07
+OMN,Post and Telecommunications,2.4264546701301306e-07
+OMN,Finacial Intermediation and Business Activities,5.736372727591107e-07
+OMN,Public Administration,2.274694501452219e-08
+OMN,"Education, Health and Other Services",2.081121830246051e-07
+OMN,Private Households,5.751267835658609e-08
+OMN,Others,9.719336260487894e-09
+OMN,Re-export & Re-import,9.682457995727628e-11
+CHL,Agriculture,1.091511648254956e-05
+CHL,Fishing,1.1985732818961494e-06
+CHL,Mining and Quarrying,3.035009186810067e-05
+CHL,Food & Beverages,7.083129660354355e-06
+CHL,Textiles and Wearing Apparel,1.8044592928095872e-07
+CHL,Wood and Paper,3.4601400464465345e-06
+CHL,"Petroleum, Chemical and Non-Metallic Mineral Products",4.766049036045604e-06
+CHL,Metal Products,3.921043235812681e-06
+CHL,Electrical and Machinery,1.1750964423148097e-06
+CHL,Transport Equipment,3.798140413942599e-07
+CHL,Other Manufacturing,1.7337029833253983e-07
+CHL,Recycling,2.444480185122914e-08
+CHL,"Electricity, Gas and Water",9.890281572252815e-07
+CHL,Construction,1.9045389388420345e-06
+CHL,Maintenance and Repair,4.771097544521971e-07
+CHL,Wholesale Trade,6.149408946554399e-06
+CHL,Retail Trade,1.3677165568941378e-05
+CHL,Hotels and Restraurants,1.8508181108744075e-06
+CHL,Transport,3.915139138652188e-06
+CHL,Post and Telecommunications,6.825966787584059e-07
+CHL,Finacial Intermediation and Business Activities,1.8220498576791443e-05
+CHL,Public Administration,3.8495152570960004e-07
+CHL,"Education, Health and Other Services",3.940580373727811e-06
+CHL,Private Households,1.4686948391627173e-08
+CHL,Others,6.7546849311157136e-06
+CHL,Re-export & Re-import,2.069441592427383e-12
+GBR,Agriculture,3.2986639947531225e-05
+GBR,Fishing,1.7409485835804732e-06
+GBR,Mining and Quarrying,5.0024491048127786e-05
+GBR,Food & Beverages,0.00015813476160085756
+GBR,Textiles and Wearing Apparel,0.00015346151066539
+GBR,Wood and Paper,0.0002114899258555178
+GBR,"Petroleum, Chemical and Non-Metallic Mineral Products",0.0005236645770726583
+GBR,Metal Products,0.00036594141289031346
+GBR,Electrical and Machinery,0.0008825471892672618
+GBR,Transport Equipment,0.000462457940394487
+GBR,Other Manufacturing,7.188680820133113e-05
+GBR,Recycling,3.1180143726293714e-06
+GBR,"Electricity, Gas and Water",2.1879967918808202e-05
+GBR,Construction,6.675808955708127e-05
+GBR,Maintenance and Repair,4.8433654818597764e-05
+GBR,Wholesale Trade,0.00036985318046747604
+GBR,Retail Trade,2.8377991089869884e-05
+GBR,Hotels and Restraurants,5.7805107488034586e-05
+GBR,Transport,0.00024090354049007446
+GBR,Post and Telecommunications,0.00017648432909772257
+GBR,Finacial Intermediation and Business Activities,0.0008982878947677332
+GBR,Public Administration,2.502402360300539e-05
+GBR,"Education, Health and Other Services",0.00012029209076400306
+GBR,Private Households,3.4065279691181773e-07
+GBR,Others,1.6202068760898043e-06
+GBR,Re-export & Re-import,6.112698035768146e-12
+LIE,Agriculture,5.2061394386946176e-09
+LIE,Fishing,9.917849206939126e-10
+LIE,Mining and Quarrying,1.5082468804176626e-08
+LIE,Food & Beverages,2.0736026730874493e-07
+LIE,Textiles and Wearing Apparel,2.670096967512137e-07
+LIE,Wood and Paper,3.598338029792287e-07
+LIE,"Petroleum, Chemical and Non-Metallic Mineral Products",3.6025726810015965e-07
+LIE,Metal Products,4.014888288284936e-07
+LIE,Electrical and Machinery,4.899627622519763e-07
+LIE,Transport Equipment,2.5876189580988146e-07
+LIE,Other Manufacturing,2.6084511948425e-07
+LIE,Recycling,2.7430362535992074e-08
+LIE,"Electricity, Gas and Water",3.337140065102276e-08
+LIE,Construction,2.0131445800811777e-07
+LIE,Maintenance and Repair,1.5904215047796098e-08
+LIE,Wholesale Trade,2.2636508442442943e-07
+LIE,Retail Trade,1.2295725613737562e-07
+LIE,Hotels and Restraurants,7.14210070983568e-08
+LIE,Transport,1.1964288932497772e-07
+LIE,Post and Telecommunications,8.00240179698952e-08
+LIE,Finacial Intermediation and Business Activities,6.16714758439473e-07
+LIE,Public Administration,1.8944661942067093e-07
+LIE,"Education, Health and Other Services",3.038112989686607e-07
+LIE,Private Households,3.957958197165747e-08
+LIE,Others,1.9766257963741586e-08
+LIE,Re-export & Re-import,2.076000172583996e-12
+SAU,Agriculture,2.5709684853733064e-07
+SAU,Fishing,4.771174279773881e-08
+SAU,Mining and Quarrying,0.00015140008410310398
+SAU,Food & Beverages,2.308878397223203e-07
+SAU,Textiles and Wearing Apparel,1.0877078985034074e-06
+SAU,Wood and Paper,1.2356653634752002e-06
+SAU,"Petroleum, Chemical and Non-Metallic Mineral Products",9.815302851156256e-06
+SAU,Metal Products,2.5859355876664643e-06
+SAU,Electrical and Machinery,4.548722732368408e-06
+SAU,Transport Equipment,4.7387469562873676e-07
+SAU,Other Manufacturing,3.4908667234154476e-07
+SAU,Recycling,1.4861535127825587e-08
+SAU,"Electricity, Gas and Water",1.756332207165972e-06
+SAU,Construction,6.3936852661655424e-06
+SAU,Maintenance and Repair,2.2772530583223174e-07
+SAU,Wholesale Trade,1.0671792535733872e-05
+SAU,Retail Trade,1.6218579917318573e-06
+SAU,Hotels and Restraurants,4.034878286692117e-06
+SAU,Transport,2.0179324794056272e-05
+SAU,Post and Telecommunications,5.36737426703973e-06
+SAU,Finacial Intermediation and Business Activities,1.8556615295922438e-05
+SAU,Public Administration,3.0943864966077953e-07
+SAU,"Education, Health and Other Services",3.3910860053624843e-06
+SAU,Private Households,1.3822254495491683e-08
+SAU,Others,2.4814129226524696e-08
+SAU,Re-export & Re-import,2.3833462897142213e-11
+ABW,Agriculture,1.2156826504603677e-09
+ABW,Fishing,6.849227780086918e-10
+ABW,Mining and Quarrying,4.393608375184641e-08
+ABW,Food & Beverages,2.2416805692817724e-08
+ABW,Textiles and Wearing Apparel,3.548684737718609e-09
+ABW,Wood and Paper,1.3111621790078174e-08
+ABW,"Petroleum, Chemical and Non-Metallic Mineral Products",8.651963430292777e-08
+ABW,Metal Products,8.575189383173057e-09
+ABW,Electrical and Machinery,1.0121580243442503e-08
+ABW,Transport Equipment,3.4309906082297785e-09
+ABW,Other Manufacturing,5.298213546687035e-09
+ABW,Recycling,1.1166315474092848e-09
+ABW,"Electricity, Gas and Water",5.4867767515314636e-08
+ABW,Construction,1.1825015868761001e-07
+ABW,Maintenance and Repair,6.491395920511685e-08
+ABW,Wholesale Trade,4.394247476267809e-07
+ABW,Retail Trade,1.6427198605655724e-07
+ABW,Hotels and Restraurants,4.873229470221467e-07
+ABW,Transport,1.5033567607099276e-07
+ABW,Post and Telecommunications,1.1455545762113945e-07
+ABW,Finacial Intermediation and Business Activities,2.636407387013195e-07
+ABW,Public Administration,1.081835656276381e-07
+ABW,"Education, Health and Other Services",3.1290457466209974e-07
+ABW,Private Households,5.843482902698948e-08
+ABW,Others,1.4735167953158592e-08
+ABW,Re-export & Re-import,1.082535747711268e-12
+CRI,Agriculture,4.646253769555089e-06
+CRI,Fishing,7.360793700959293e-08
+CRI,Mining and Quarrying,1.4133766594159782e-07
+CRI,Food & Beverages,2.026999045708818e-06
+CRI,Textiles and Wearing Apparel,1.0847360588802007e-07
+CRI,Wood and Paper,7.304290521911742e-07
+CRI,"Petroleum, Chemical and Non-Metallic Mineral Products",1.2158352013552312e-06
+CRI,Metal Products,7.123374641109453e-07
+CRI,Electrical and Machinery,2.9911997764633777e-06
+CRI,Transport Equipment,1.2493582456484556e-07
+CRI,Other Manufacturing,9.848269261910726e-08
+CRI,Recycling,7.3907157046040635e-09
+CRI,"Electricity, Gas and Water",4.550312380562157e-07
+CRI,Construction,7.821556885443292e-07
+CRI,Maintenance and Repair,1.0691417453685018e-07
+CRI,Wholesale Trade,3.3356891313479698e-06
+CRI,Retail Trade,3.7123726448388526e-07
+CRI,Hotels and Restraurants,7.686972155816331e-07
+CRI,Transport,4.327684594530995e-06
+CRI,Post and Telecommunications,1.7531120532204492e-06
+CRI,Finacial Intermediation and Business Activities,5.140606309820918e-06
+CRI,Public Administration,1.327268468799297e-07
+CRI,"Education, Health and Other Services",1.351206526980346e-06
+CRI,Private Households,3.939499097140839e-08
+CRI,Others,5.274015023155538e-08
+CRI,Re-export & Re-import,4.3468157941502093e-11
+ARE,Agriculture,2.455454976084705e-07
+ARE,Fishing,4.185319350711203e-08
+ARE,Mining and Quarrying,1.7056575353959304e-05
+ARE,Food & Beverages,3.854520669541977e-07
+ARE,Textiles and Wearing Apparel,4.381954401458791e-06
+ARE,Wood and Paper,1.3043479302075529e-06
+ARE,"Petroleum, Chemical and Non-Metallic Mineral Products",5.010010011708035e-06
+ARE,Metal Products,4.639715729373877e-06
+ARE,Electrical and Machinery,8.864565260273564e-06
+ARE,Transport Equipment,1.2481714345768854e-06
+ARE,Other Manufacturing,1.0621495103997856e-06
+ARE,Recycling,9.946109698598933e-08
+ARE,"Electricity, Gas and Water",5.832442152037457e-06
+ARE,Construction,9.28990960632297e-06
+ARE,Maintenance and Repair,6.673551242389333e-07
+ARE,Wholesale Trade,2.0508613192898663e-05
+ARE,Retail Trade,3.6887150735313144e-06
+ARE,Hotels and Restraurants,4.419335682481335e-06
+ARE,Transport,1.2942402282791013e-05
+ARE,Post and Telecommunications,8.286080447064891e-06
+ARE,Finacial Intermediation and Business Activities,1.6944123064716077e-05
+ARE,Public Administration,5.281051659589181e-07
+ARE,"Education, Health and Other Services",6.826168454524749e-06
+ARE,Private Households,1.9588668702832784e-07
+ARE,Others,9.441685696910416e-08
+ARE,Re-export & Re-import,9.36271846717241e-11
+QAT,Agriculture,9.05420753233651e-09
+QAT,Fishing,3.506132158905209e-09
+QAT,Mining and Quarrying,5.161149690784872e-06
+QAT,Food & Beverages,8.718939439492406e-09
+QAT,Textiles and Wearing Apparel,4.044169176396485e-08
+QAT,Wood and Paper,5.970152484196365e-08
+QAT,"Petroleum, Chemical and Non-Metallic Mineral Products",5.382892101905047e-07
+QAT,Metal Products,1.688105453046766e-07
+QAT,Electrical and Machinery,3.0700198751383294e-07
+QAT,Transport Equipment,3.836065610001789e-08
+QAT,Other Manufacturing,2.8079832355322953e-08
+QAT,Recycling,6.48875130987266e-09
+QAT,"Electricity, Gas and Water",1.144275855921975e-07
+QAT,Construction,4.067804194328809e-07
+QAT,Maintenance and Repair,6.931337398680626e-08
+QAT,Wholesale Trade,5.245076388610671e-07
+QAT,Retail Trade,1.531036944745481e-07
+QAT,Hotels and Restraurants,2.2740502005832985e-07
+QAT,Transport,1.2451919438628278e-06
+QAT,Post and Telecommunications,4.460779771094534e-07
+QAT,Finacial Intermediation and Business Activities,7.028992057990045e-07
+QAT,Public Administration,3.401316368294162e-08
+QAT,"Education, Health and Other Services",2.9390291607826653e-07
+QAT,Private Households,3.306533892785148e-08
+QAT,Others,5.0017112092046976e-09
+QAT,Re-export & Re-import,5.9601745681221316e-12
+CHE,Agriculture,1.1619513060860174e-05
+CHE,Fishing,1.684613116994046e-06
+CHE,Mining and Quarrying,4.336134846843479e-06
+CHE,Food & Beverages,2.303474360111956e-05
+CHE,Textiles and Wearing Apparel,3.3149674257169294e-05
+CHE,Wood and Paper,0.00010073958868481693
+CHE,"Petroleum, Chemical and Non-Metallic Mineral Products",0.00021634880302242907
+CHE,Metal Products,0.0001479155920930226
+CHE,Electrical and Machinery,0.00043466993717094084
+CHE,Transport Equipment,3.5656238919483155e-05
+CHE,Other Manufacturing,3.120309498835136e-05
+CHE,Recycling,1.895802252136734e-06
+CHE,"Electricity, Gas and Water",5.3157837498195414e-05
+CHE,Construction,2.9055117464652997e-05
+CHE,Maintenance and Repair,8.734483903829025e-06
+CHE,Wholesale Trade,8.421855247896591e-05
+CHE,Retail Trade,0.00018731441778985526
+CHE,Hotels and Restraurants,3.79601476141866e-05
+CHE,Transport,0.00020559915035287625
+CHE,Post and Telecommunications,7.648783559286224e-05
+CHE,Finacial Intermediation and Business Activities,0.0008294417189847034
+CHE,Public Administration,1.1092744065668979e-05
+CHE,"Education, Health and Other Services",0.0001149622372102569
+CHE,Private Households,1.3686107815517625e-06
+CHE,Others,1.7753024934088935e-06
+CHE,Re-export & Re-import,2.860178394577634e-11
+BHS,Agriculture,2.628496199325462e-07
+BHS,Fishing,4.897129579926367e-08
+BHS,Mining and Quarrying,5.278325023496574e-08
+BHS,Food & Beverages,2.0758987618641904e-06
+BHS,Textiles and Wearing Apparel,1.8494258512133295e-08
+BHS,Wood and Paper,1.3583710493952085e-07
+BHS,"Petroleum, Chemical and Non-Metallic Mineral Products",1.3024664715066011e-07
+BHS,Metal Products,1.2899307615445535e-07
+BHS,Electrical and Machinery,1.0375060440284272e-07
+BHS,Transport Equipment,1.2562588927200733e-07
+BHS,Other Manufacturing,4.148569212863847e-08
+BHS,Recycling,2.0121184719707445e-09
+BHS,"Electricity, Gas and Water",1.3698596152964006e-07
+BHS,Construction,5.060744865598736e-07
+BHS,Maintenance and Repair,9.246725008198132e-08
+BHS,Wholesale Trade,1.6549295626588403e-06
+BHS,Retail Trade,3.324435667512332e-07
+BHS,Hotels and Restraurants,6.783023702901502e-07
+BHS,Transport,1.8151217901251354e-06
+BHS,Post and Telecommunications,7.297444941842436e-07
+BHS,Finacial Intermediation and Business Activities,1.5317934255680058e-06
+BHS,Public Administration,1.8382253477979147e-07
+BHS,"Education, Health and Other Services",1.32416878242963e-06
+BHS,Private Households,4.1779226195042146e-08
+BHS,Others,1.6821514176740198e-08
+BHS,Re-export & Re-import,1.3074963219648186e-13
+NZL,Agriculture,7.555503434083038e-06
+NZL,Fishing,5.233730951004108e-07
+NZL,Mining and Quarrying,7.586364109777527e-07
+NZL,Food & Beverages,1.4796148259307336e-05
+NZL,Textiles and Wearing Apparel,2.4423556685423016e-06
+NZL,Wood and Paper,3.1499396664136026e-06
+NZL,"Petroleum, Chemical and Non-Metallic Mineral Products",4.1601417502386645e-06
+NZL,Metal Products,3.351461892095137e-06
+NZL,Electrical and Machinery,3.429597468615364e-06
+NZL,Transport Equipment,3.2852241429505996e-07
+NZL,Other Manufacturing,1.5847947531262088e-07
+NZL,Recycling,1.2826734593429914e-06
+NZL,"Electricity, Gas and Water",1.1371711075925159e-06
+NZL,Construction,1.0171206746284214e-06
+NZL,Maintenance and Repair,2.375765855992137e-07
+NZL,Wholesale Trade,7.36804303763902e-06
+NZL,Retail Trade,3.0335589204523687e-06
+NZL,Hotels and Restraurants,2.3382487680930381e-07
+NZL,Transport,6.004327564923704e-06
+NZL,Post and Telecommunications,2.090914953086472e-06
+NZL,Finacial Intermediation and Business Activities,1.2502297345624053e-05
+NZL,Public Administration,3.8237642155566166e-07
+NZL,"Education, Health and Other Services",1.9081317289300484e-06
+NZL,Private Households,3.2378847340190114e-09
+NZL,Others,9.292732390199858e-07
+NZL,Re-export & Re-import,2.015056942715525e-12
+SYC,Agriculture,7.452295339503537e-08
+SYC,Fishing,5.608803961613188e-09
+SYC,Mining and Quarrying,6.991933726619449e-09
+SYC,Food & Beverages,1.2342817208131747e-07
+SYC,Textiles and Wearing Apparel,4.131521207761389e-09
+SYC,Wood and Paper,2.715419115768633e-08
+SYC,"Petroleum, Chemical and Non-Metallic Mineral Products",2.3646702309525844e-08
+SYC,Metal Products,2.0974514662827648e-08
+SYC,Electrical and Machinery,1.6541015149086925e-08
+SYC,Transport Equipment,3.687547041084702e-09
+SYC,Other Manufacturing,4.481848455061845e-09
+SYC,Recycling,2.651287959639225e-10
+SYC,"Electricity, Gas and Water",2.3730278480746583e-08
+SYC,Construction,3.0041564725244563e-08
+SYC,Maintenance and Repair,1.659455739122553e-08
+SYC,Wholesale Trade,3.484330201120622e-07
+SYC,Retail Trade,8.889269875964436e-08
+SYC,Hotels and Restraurants,8.899657486773066e-08
+SYC,Transport,3.1879272435961694e-07
+SYC,Post and Telecommunications,1.6526490214915552e-07
+SYC,Finacial Intermediation and Business Activities,2.2409247793285637e-07
+SYC,Public Administration,2.5559973762063138e-08
+SYC,"Education, Health and Other Services",1.0096961003913582e-07
+SYC,Private Households,8.287012175633012e-09
+SYC,Others,3.905681375230956e-09
+SYC,Re-export & Re-import,1.4986994890130045e-13
+RUS,Agriculture,2.1834213608448083e-05
+RUS,Fishing,3.2454859112650298e-06
+RUS,Mining and Quarrying,0.0006883240945800195
+RUS,Food & Beverages,2.736358096274334e-05
+RUS,Textiles and Wearing Apparel,1.9206717364213217e-05
+RUS,Wood and Paper,5.25562243567876e-05
+RUS,"Petroleum, Chemical and Non-Metallic Mineral Products",0.00030173328509946286
+RUS,Metal Products,0.00020820678404905222
+RUS,Electrical and Machinery,0.00016457829320496903
+RUS,Transport Equipment,3.076845580129402e-09
+RUS,Other Manufacturing,2.215500975045798e-05
+RUS,Recycling,4.703213361995074e-06
+RUS,"Electricity, Gas and Water",8.593110080134035e-05
+RUS,Construction,7.279105436303603e-05
+RUS,Maintenance and Repair,1.6202954289942175e-06
+RUS,Wholesale Trade,2.0883815625514047e-05
+RUS,Retail Trade,4.6448336226391916e-05
+RUS,Hotels and Restraurants,1.3310506997756557e-09
+RUS,Transport,0.0002622712593841829
+RUS,Post and Telecommunications,2.4745863794997053e-09
+RUS,Finacial Intermediation and Business Activities,0.00033941251831426486
+RUS,Public Administration,5.9047069736709e-10
+RUS,"Education, Health and Other Services",7.268328956258946e-05
+RUS,Private Households,1.5523993646479252e-13
+RUS,Others,4.4553912561355034e-11
+RUS,Re-export & Re-import,4.215216095245423e-07
+KOR,Agriculture,4.3576256707900274e-07
+KOR,Fishing,9.758228652545273e-08
+KOR,Mining and Quarrying,1.2350319565013644e-06
+KOR,Food & Beverages,2.423355466828344e-06
+KOR,Textiles and Wearing Apparel,4.6075839792669536e-05
+KOR,Wood and Paper,2.1140064722541055e-05
+KOR,"Petroleum, Chemical and Non-Metallic Mineral Products",6.0257925981756254e-05
+KOR,Metal Products,5.942850026069408e-05
+KOR,Electrical and Machinery,0.00016938630810259955
+KOR,Transport Equipment,7.241024557234675e-05
+KOR,Other Manufacturing,7.659661262608656e-06
+KOR,Recycling,0.0
+KOR,"Electricity, Gas and Water",6.277874266794272e-06
+KOR,Construction,1.1267801888398674e-05
+KOR,Maintenance and Repair,1.0946171486906239e-06
+KOR,Wholesale Trade,1.4108390032715451e-05
+KOR,Retail Trade,3.137903127305177e-05
+KOR,Hotels and Restraurants,2.1652429227683638e-05
+KOR,Transport,4.427412437555164e-05
+KOR,Post and Telecommunications,2.145617222380823e-05
+KOR,Finacial Intermediation and Business Activities,0.00015397420272506506
+KOR,Public Administration,4.3175628019265775e-07
+KOR,"Education, Health and Other Services",4.0570025119646725e-05
+KOR,Private Households,5.51640608142189e-07
+KOR,Others,2.8625787838525627e-13
+KOR,Re-export & Re-import,1.1313957112233886e-12
+PAN,Agriculture,1.6866031245226576e-06
+PAN,Fishing,4.81417364982511e-08
+PAN,Mining and Quarrying,1.1211036091418566e-07
+PAN,Food & Beverages,4.688726203241786e-07
+PAN,Textiles and Wearing Apparel,1.3242856217512065e-07
+PAN,Wood and Paper,1.5633226820454588e-07
+PAN,"Petroleum, Chemical and Non-Metallic Mineral Products",2.2618901458935267e-07
+PAN,Metal Products,1.7591930887630977e-07
+PAN,Electrical and Machinery,3.632217121770608e-07
+PAN,Transport Equipment,3.697818945059994e-07
+PAN,Other Manufacturing,4.919464107240489e-08
+PAN,Recycling,1.0417801304462769e-08
+PAN,"Electricity, Gas and Water",2.1010736370435918e-07
+PAN,Construction,2.0761397117731125e-06
+PAN,Maintenance and Repair,3.3758912138694713e-07
+PAN,Wholesale Trade,4.097973730330505e-06
+PAN,Retail Trade,8.923075523536983e-07
+PAN,Hotels and Restraurants,2.641330502885815e-06
+PAN,Transport,7.4956530369309235e-06
+PAN,Post and Telecommunications,2.066623968101468e-06
+PAN,Finacial Intermediation and Business Activities,2.090510690950124e-06
+PAN,Public Administration,2.1388645668096849e-07
+PAN,"Education, Health and Other Services",1.4967683798143546e-06
+PAN,Private Households,9.214449827531107e-08
+PAN,Others,1.9404009919947554e-08
+PAN,Re-export & Re-import,1.6542096061427247e-11
+ISR,Agriculture,1.0302548140334333e-05
+ISR,Fishing,1.786136265205718e-07
+ISR,Mining and Quarrying,5.2431446262288214e-06
+ISR,Food & Beverages,3.3449228778235064e-06
+ISR,Textiles and Wearing Apparel,5.504046498692369e-06
+ISR,Wood and Paper,4.873036008521751e-06
+ISR,"Petroleum, Chemical and Non-Metallic Mineral Products",3.7371837839802194e-05
+ISR,Metal Products,1.7830209990325408e-05
+ISR,Electrical and Machinery,8.001472724208977e-05
+ISR,Transport Equipment,7.046095378810848e-06
+ISR,Other Manufacturing,2.7726476283397148e-06
+ISR,Recycling,6.766393192193814e-06
+ISR,"Electricity, Gas and Water",3.2107112235672984e-06
+ISR,Construction,6.220392767487993e-06
+ISR,Maintenance and Repair,1.0438419158642503e-06
+ISR,Wholesale Trade,1.3453962184066322e-05
+ISR,Retail Trade,2.9923358111128734e-05
+ISR,Hotels and Restraurants,9.232038978899568e-06
+ISR,Transport,2.5762327219935323e-05
+ISR,Post and Telecommunications,7.2276005406161105e-06
+ISR,Finacial Intermediation and Business Activities,5.0701567268459855e-05
+ISR,Public Administration,1.1744675772860997e-06
+ISR,"Education, Health and Other Services",7.0552615602251925e-06
+ISR,Private Households,2.936077356363517e-09
+ISR,Others,8.426549665801507e-07
+ISR,Re-export & Re-import,6.437598651940463e-12
+GRL,Agriculture,3.0545617136090344e-07
+GRL,Fishing,4.3106280546336766e-06
+GRL,Mining and Quarrying,-2.0037553932242017e-08
+GRL,Food & Beverages,2.0129611461548363e-06
+GRL,Textiles and Wearing Apparel,7.056362133843844e-08
+GRL,Wood and Paper,2.896526928657521e-08
+GRL,"Petroleum, Chemical and Non-Metallic Mineral Products",6.2833046559465405e-09
+GRL,Metal Products,3.693616404262408e-08
+GRL,Electrical and Machinery,6.907134868349257e-08
+GRL,Transport Equipment,7.55367622246896e-09
+GRL,Other Manufacturing,1.3058850967000257e-08
+GRL,Recycling,4.865077399372839e-09
+GRL,"Electricity, Gas and Water",1.4029085007905028e-07
+GRL,Construction,4.1109082440956355e-07
+GRL,Maintenance and Repair,1.4089652616634702e-08
+GRL,Wholesale Trade,4.403633936090991e-07
+GRL,Retail Trade,2.3103588676198598e-07
+GRL,Hotels and Restraurants,8.418021146885352e-08
+GRL,Transport,7.481470267622467e-07
+GRL,Post and Telecommunications,1.7130603287098486e-07
+GRL,Finacial Intermediation and Business Activities,7.452705150363572e-07
+GRL,Public Administration,4.859354300048488e-08
+GRL,"Education, Health and Other Services",2.335858186647724e-07
+GRL,Private Households,7.671136785781023e-11
+GRL,Others,2.2016113100218645e-08
+GRL,Re-export & Re-import,9.59944483521238e-12
+NOR,Agriculture,7.183024558741549e-06
+NOR,Fishing,8.101401234708643e-06
+NOR,Mining and Quarrying,6.649931182684137e-05
+NOR,Food & Beverages,1.9554203556115187e-05
+NOR,Textiles and Wearing Apparel,4.323991768225191e-06
+NOR,Wood and Paper,2.8743896210037476e-05
+NOR,"Petroleum, Chemical and Non-Metallic Mineral Products",2.734198506786802e-05
+NOR,Metal Products,2.9184051593400922e-05
+NOR,Electrical and Machinery,4.815881710825247e-05
+NOR,Transport Equipment,4.9681082933307534e-05
+NOR,Other Manufacturing,6.601923182119144e-06
+NOR,Recycling,4.512796886807612e-07
+NOR,"Electricity, Gas and Water",8.820551622817787e-06
+NOR,Construction,2.3685211178098142e-05
+NOR,Maintenance and Repair,8.205158802065424e-06
+NOR,Wholesale Trade,4.5936454230017276e-05
+NOR,Retail Trade,3.508714490621232e-05
+NOR,Hotels and Restraurants,9.582538906424232e-06
+NOR,Transport,5.947836075889134e-05
+NOR,Post and Telecommunications,2.628121944013882e-05
+NOR,Finacial Intermediation and Business Activities,0.00013392732164133286
+NOR,Public Administration,9.578674968058986e-06
+NOR,"Education, Health and Other Services",3.185624939547726e-05
+NOR,Private Households,6.240857645049741e-08
+NOR,Others,4.955774880561602e-07
+NOR,Re-export & Re-import,7.791125687210284e-12
+CAN,Agriculture,1.8928892971841852e-05
+CAN,Fishing,2.8837424789867546e-06
+CAN,Mining and Quarrying,1.8468300833622973e-05
+CAN,Food & Beverages,1.2071478387033612e-05
+CAN,Textiles and Wearing Apparel,4.494614955002288e-06
+CAN,Wood and Paper,2.7907534021511343e-05
+CAN,"Petroleum, Chemical and Non-Metallic Mineral Products",2.3379774015621122e-05
+CAN,Metal Products,3.0163096079556534e-05
+CAN,Electrical and Machinery,6.438946997390492e-05
+CAN,Transport Equipment,1.4132486082752479e-05
+CAN,Other Manufacturing,6.3705669437894225e-06
+CAN,Recycling,1.6595677794910547e-06
+CAN,"Electricity, Gas and Water",3.0650569701061456e-06
+CAN,Construction,6.191848658932069e-06
+CAN,Maintenance and Repair,8.110262045597147e-07
+CAN,Wholesale Trade,1.0453208395446078e-05
+CAN,Retail Trade,2.3249368696765363e-05
+CAN,Hotels and Restraurants,7.296266814986706e-06
+CAN,Transport,1.1723055154161987e-05
+CAN,Post and Telecommunications,2.4778594253668408e-06
+CAN,Finacial Intermediation and Business Activities,6.215708892601302e-05
+CAN,Public Administration,2.673730423648079e-06
+CAN,"Education, Health and Other Services",7.118567701013325e-06
+CAN,Private Households,6.830118290703651e-11
+CAN,Others,1.9602535200771406e-08
+CAN,Re-export & Re-import,5.913368124639101e-13
+JPN,Agriculture,1.3893270832644361e-06
+JPN,Fishing,9.781634238980838e-07
+JPN,Mining and Quarrying,2.6814834339965584e-06
+JPN,Food & Beverages,6.5033847574388265e-06
+JPN,Textiles and Wearing Apparel,1.3193226103954775e-05
+JPN,Wood and Paper,3.389376963439182e-05
+JPN,"Petroleum, Chemical and Non-Metallic Mineral Products",8.870448295630122e-05
+JPN,Metal Products,8.44095490104911e-05
+JPN,Electrical and Machinery,0.0003200888699879512
+JPN,Transport Equipment,0.0001000042031931317
+JPN,Other Manufacturing,1.943114438867536e-05
+JPN,Recycling,1.8438287177637388e-06
+JPN,"Electricity, Gas and Water",1.4652203560267976e-05
+JPN,Construction,2.6707700130476127e-05
+JPN,Maintenance and Repair,1.1882465618345825e-05
+JPN,Wholesale Trade,0.0006262997751669611
+JPN,Retail Trade,2.5528298906551854e-05
+JPN,Hotels and Restraurants,5.719151493369837e-05
+JPN,Transport,0.00014795791068001764
+JPN,Post and Telecommunications,5.4415912899915004e-05
+JPN,Finacial Intermediation and Business Activities,0.00026007131552005275
+JPN,Public Administration,3.444726898085478e-06
+JPN,"Education, Health and Other Services",4.1402832716167716e-05
+JPN,Private Households,1.216220028206439e-07
+JPN,Others,3.2285396405030083e-06
+JPN,Re-export & Re-import,1.4122489682362904e-09
+MCO,Agriculture,6.415630832805079e-09
+MCO,Fishing,2.2836301877713907e-09
+MCO,Mining and Quarrying,7.322099846730291e-09
+MCO,Food & Beverages,1.0704887388091492e-08
+MCO,Textiles and Wearing Apparel,1.1058265100856781e-08
+MCO,Wood and Paper,2.5588437346196624e-08
+MCO,"Petroleum, Chemical and Non-Metallic Mineral Products",2.7985844099582957e-08
+MCO,Metal Products,2.9863601588425884e-08
+MCO,Electrical and Machinery,3.735086256806916e-08
+MCO,Transport Equipment,1.1992196392127193e-08
+MCO,Other Manufacturing,1.0912481222154166e-08
+MCO,Recycling,9.127578678446691e-10
+MCO,"Electricity, Gas and Water",1.5028889119941476e-08
+MCO,Construction,1.702501274303998e-07
+MCO,Maintenance and Repair,6.757470501158979e-08
+MCO,Wholesale Trade,2.878391246489574e-07
+MCO,Retail Trade,1.4990857839887822e-07
+MCO,Hotels and Restraurants,1.1613977535795805e-07
+MCO,Transport,1.7092562674929238e-07
+MCO,Post and Telecommunications,1.3232105492845523e-07
+MCO,Finacial Intermediation and Business Activities,3.211971189334495e-07
+MCO,Public Administration,8.64801252091131e-08
+MCO,"Education, Health and Other Services",1.2756702723321624e-07
+MCO,Private Households,3.422008911765549e-08
+MCO,Others,1.5222992974848784e-08
+MCO,Re-export & Re-import,1.3871837799759435e-12
+ISL,Agriculture,3.943122158161061e-06
+ISL,Fishing,2.017984965980533e-06
+ISL,Mining and Quarrying,1.6613022800960988e-07
+ISL,Food & Beverages,8.839797199085021e-06
+ISL,Textiles and Wearing Apparel,4.823977188804688e-07
+ISL,Wood and Paper,1.5286717196580392e-06
+ISL,"Petroleum, Chemical and Non-Metallic Mineral Products",2.1239851660621524e-06
+ISL,Metal Products,3.5117271535138114e-06
+ISL,Electrical and Machinery,3.4793558493991735e-06
+ISL,Transport Equipment,3.2462915087123633e-07
+ISL,Other Manufacturing,3.100281856891551e-07
+ISL,Recycling,1.833559939061717e-08
+ISL,"Electricity, Gas and Water",9.244469963048354e-07
+ISL,Construction,3.9792491906243224e-06
+ISL,Maintenance and Repair,3.105113271958435e-07
+ISL,Wholesale Trade,8.336729556340012e-06
+ISL,Retail Trade,1.0940306546803109e-06
+ISL,Hotels and Restraurants,2.2009947893165945e-06
+ISL,Transport,6.347082428251542e-06
+ISL,Post and Telecommunications,3.067771793378586e-06
+ISL,Finacial Intermediation and Business Activities,1.1945444107603692e-05
+ISL,Public Administration,8.320788396713824e-07
+ISL,"Education, Health and Other Services",6.552582706799358e-06
+ISL,Private Households,1.479527505381062e-07
+ISL,Others,1.930307820939697e-07
+ISL,Re-export & Re-import,4.884318347518379e-12
+BRB,Agriculture,2.581659655511728e-08
+BRB,Fishing,4.450689084375385e-09
+BRB,Mining and Quarrying,1.5440335592324216e-08
+BRB,Food & Beverages,4.998968397665039e-08
+BRB,Textiles and Wearing Apparel,1.2997626834355087e-08
+BRB,Wood and Paper,4.711832424559328e-08
+BRB,"Petroleum, Chemical and Non-Metallic Mineral Products",4.724663191253769e-08
+BRB,Metal Products,4.469001037296997e-08
+BRB,Electrical and Machinery,1.072514405704543e-07
+BRB,Transport Equipment,1.0126660878618683e-08
+BRB,Other Manufacturing,1.0821477610717466e-08
+BRB,Recycling,1.2637485366365765e-09
+BRB,"Electricity, Gas and Water",1.930405825130537e-08
+BRB,Construction,1.1000422024380279e-07
+BRB,Maintenance and Repair,5.2294285087905086e-08
+BRB,Wholesale Trade,3.087307592651529e-07
+BRB,Retail Trade,1.1655291578723177e-07
+BRB,Hotels and Restraurants,9.162137997488073e-08
+BRB,Transport,2.407930723577136e-07
+BRB,Post and Telecommunications,1.215226831414025e-07
+BRB,Finacial Intermediation and Business Activities,2.5365719272807113e-07
+BRB,Public Administration,5.905041635651445e-08
+BRB,"Education, Health and Other Services",1.162631590062256e-07
+BRB,Private Households,2.8148219810086507e-08
+BRB,Others,5.878377669090204e-09
+BRB,Re-export & Re-import,1.6749472266473969e-12

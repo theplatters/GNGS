@@ -31,9 +31,6 @@ with open("data/south_codes.json") as f:
 
 with open("data/eu_codes.json") as f:
     eu_codes = list(set(json.load(f)))
-# removed 'MAF' 'IMN' 'SXM' 'CHI' 'NRU' 'MNP' 'GIB' 'FRO' 'KNA' 'PRI' 'TCA' 'CUW' 'ASM' 'GUM' 'VIR' 'PLW'
-with open("data/High_income.json") as f:
-    high_income_codes = list(set(json.load(f)))
 
 # removes Guinnea-Bissau
 with open("data/Low_income.json") as f:
@@ -46,6 +43,10 @@ with open("data/Lower_middle_income.json") as f:
 # removes 'TON' 'XKX' 'DMA' 'LCA' 'MHL' 'GNQ' 'GRD' 'VCT' 'TUV'
 with open("data/Upper_middle_income.json") as f:
     upper_middle_income_codes = list(set(json.load(f)))
+
+# removed 'MAF' 'IMN' 'SXM' 'CHI' 'NRU' 'MNP' 'GIB' 'FRO' 'KNA' 'PRI' 'TCA' 'CUW' 'ASM' 'GUM' 'VIR' 'PLW'
+with open("data/High_income.json") as f:
+    high_income_codes = list(set(json.load(f)))
 
 
 def generate_data(from_codes, to_codes, to_code_name):
@@ -69,6 +70,9 @@ def generate_data(from_codes, to_codes, to_code_name):
         name="PTT_Ratio",
     )
     ptts.to_csv(output_dir + "/ptts_" + to_code_name + ".csv")
+    dependency_shares(eora, from_codes, non_from_to).to_csv(
+        output_dir + "/dependency_shares_" + to_code_name + ".csv"
+    )
 
 
 generate_data(eu_codes, low_income_codes, "low_income")
