@@ -41,7 +41,7 @@ with open("data/High_income.json") as f:
 def plot(from_codes, to_codes, to_codes_name):
     non_from_to = [el for el in to_codes if el not in from_codes]
     non_from_to_wo_russia_and_china = [
-        el for el in non_from_to if el != "RUS" and el != "CHN"
+        el for el in non_from_to if el != "RUS" and el != "CHN" and el != "IND"
     ]
 
     ptt_df = (
@@ -49,10 +49,8 @@ def plot(from_codes, to_codes, to_codes_name):
             [ptt(eora, from_codes, el) for el in non_from_to],
             index=non_from_to,
         )
-        .rename("ptt")
         .rename(index={"SUD": "SDN"})
-        .rename()
-        .sort_values()
+        .rename("ptt")
         .reset_index()
         .rename(columns={"index": "ISO_A3"})
     )
