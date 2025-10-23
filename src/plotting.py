@@ -40,7 +40,9 @@ with open("data/High_income.json") as f:
 
 def plot(from_codes, to_codes, to_codes_name):
     non_from_to = [el for el in to_codes if el not in from_codes]
-    non_from_to_wo_russia = [el for el in non_from_to if el != "RUS"]
+    non_from_to_wo_russia_and_china = [
+        el for el in non_from_to if el != "RUS" and el != "CHN"
+    ]
 
     ptt_df = (
         pd.Series(
@@ -48,29 +50,28 @@ def plot(from_codes, to_codes, to_codes_name):
             index=non_from_to,
         )
         .rename("ptt")
-        .rename(index={"SUN": "SDN"})
+        .rename(index={"SUD": "SDN"})
+        .rename()
         .sort_values()
         .reset_index()
-        .rename(columns={"index": "SOV_A3"})
-        .rename(index={"SUD": "SDN"})
+        .rename(columns={"index": "ISO_A3"})
     )
     ptt_df = ptt_df[ptt_df["ptt"] > 1]
 
     co2_shares_df = (
-        co2_shares(eora, from_codes, non_from_to_wo_russia)
+        co2_shares(eora, from_codes, non_from_to_wo_russia_and_china)
         .sum()
-        .rename(index={"SUN": "SDN"})
         .div(co2_shares(eora, from_codes, non_from_to).sum().sum())
         .groupby(level=[0])
         .sum()
         .rename("co2_share")
         .reset_index()
-        .rename(columns={"region": "SOV_A3"})
+        .rename(columns={"region": "ISO_A3"})
     )
 
     # Merge with world GeoDataFrame
-    world_merged = world.merge(ptt_df, on="SOV_A3", how="left").merge(
-        co2_shares_df, on="SOV_A3", how="left"
+    world_merged = world.merge(ptt_df, on="ISO_A3", how="left").merge(
+        co2_shares_df, on="ISO_A3", how="left"
     )
 
     # Identify outliers
@@ -96,6 +97,7 @@ def plot(from_codes, to_codes, to_codes_name):
     # Plot outliers in red
     plt.title("PTT Map (outliers >10 in red)")
     plt.savefig(plot_dir + "/ptt_map" + to_codes_name + ".png")
+    #
 
     # Plot CO2 shares map (keep original style)
     fig, ax = plt.subplots(figsize=(12, 6))
@@ -106,8 +108,13 @@ def plot(from_codes, to_codes, to_codes_name):
         ax=ax,
         missing_kwds={"color": "lightgray"},
     )
+    plt.title("CO² shares")
     plt.savefig(plot_dir + "/co2_shares_map" + to_codes_name + ".png")
 
 
 fc = south_codes + ["CHN"] + ["IND"]
 plot(eu_codes, fc, "gs")
+
+world[world["SOV_A3"] == "SDN"]
+china_rows = world[world["NAME"].str.contains("Sudan", case=False, na=False)]
+print(china_rows[["NAME", "SOV_A3", "ISO_A3", "ADM0_A3"]])
