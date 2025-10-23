@@ -39,6 +39,7 @@ eu_countries_plus_ckj = eu_countries + [
     "JPN",  # Japan
 ]
 
+
 eora_true = eo.Eora("data/full_eora")
 res = eora_true.q.div(eora_true.x, axis=1)
 res
